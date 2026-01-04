@@ -1,16 +1,18 @@
-// import { useState } from 'react'
 import "./App.css";
 import "./index.css";
-import Background from "./components/background";
-import Header from "./components/header";
+import { Background } from "./components/background.jsx";
+// import { Header } from "./components/Header.jsx";
+import { Header } from "./components/Header.jsx";
+import { Footer } from "./components/Footer.jsx";
 function App() {
   return (
     <>
       <Background>
         <Header />
-        <main>
+        <main className="grow shrink">
           <h1>Hola</h1>
         </main>
+        <Footer />
       </Background>
     </>
   );

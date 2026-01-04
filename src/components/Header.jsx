@@ -1,6 +1,6 @@
-export default function Header() {
+export function Header() {
   return (
-    <div>
+    <>
       <header className="navbar w-full py-8">
         <nav className="container flex mx-auto justify-between">
           <h3>DevJobs</h3>
@@ -8,6 +8,6 @@ export default function Header() {
           <button>Publicar un empleo</button>
         </nav>
       </header>
-    </div>
+    </>
   );
 }
