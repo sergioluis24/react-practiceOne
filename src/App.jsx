@@ -1,5 +1,4 @@
 // import { useState } from 'react'
-import "./normalize.css";
 import "./index.css";
 import { Background } from "./components/background.jsx";
 import { Header } from "./components/Header.jsx";

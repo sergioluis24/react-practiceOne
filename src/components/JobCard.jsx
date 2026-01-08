@@ -1,13 +1,15 @@
 export function JobCard({ job }) {
   return (
     <>
-      <article>
+      <article className="flex justify-between border-b-[.1px] border-gray-50">
         <div>
-          <h3>{job.titulo}</h3>
-          <small>
-            {job.empresa} | {job.modalidad}
+          <h3 className="text-2xl mb-1">
+            <b>{job.titulo}</b>
+          </h3>
+          <small className="text-lg">
+            {job.empresa} | {job.ubicacion}
           </small>
-          <p>{job.descripcion}</p>
+          <p className="">{job.descripcion}</p>
         </div>
         <button className="">Aplicar</button>
       </article>
