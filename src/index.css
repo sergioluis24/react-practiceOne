@@ -8,3 +8,7 @@ body {
 }
 .navbar {
 }
+.pagination.is-active {
+  background-color: #fff;
+  color: rgb(21, 21, 21);
+}

@@ -13,6 +13,7 @@ html {
   -webkit-text-size-adjust: 100%; /* 2 */
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 
 /* Sections
@@ -79,7 +80,7 @@ pre {
  */
 
 a {
-  background-color: transparent;
+  /* background-color: transparent;   */
 }
 
 /**
