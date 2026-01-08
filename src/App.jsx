@@ -1,8 +1,8 @@
 // import { useState } from 'react'
-import "./App.css";
+import "./normalize.css";
 import "./index.css";
 import Background from "./components/background";
-import Header from "./components/header";
+import Header from "./components/Header.jsx";
 function App() {
   return (
     <>
