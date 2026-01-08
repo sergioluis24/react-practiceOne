@@ -1,11 +1,17 @@
+import logo from "./../assets/SmallSquareLogoJpg.jpg";
 export function Header() {
   return (
     <>
       <header className="navbar w-full py-8">
         <nav className="container flex mx-auto justify-between">
-          <h3>DevJobs</h3>
-          <p>Empleos</p>
-          <button>Publicar un empleo</button>
+          <div className="w-12 h-12">
+            <img
+              src={logo}
+              alt="Logo Debjobs"
+              className="w-full h-auto rounded-full"
+            />
+          </div>
+          <button className="cursor-pointer">Publicar un empleo</button>
         </nav>
       </header>
     </>
