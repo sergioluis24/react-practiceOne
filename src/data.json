@@ -1,0 +1,362 @@
+[
+  {
+    "id": 1,
+    "titulo": "Frontend Developer",
+    "empresa": "TechNova",
+    "ubicacion": "Remoto",
+    "descripcion": "Desarrollo de interfaces modernas y optimizadas para aplicaciones web.",
+    "data": {
+      "tecnologia": ["HTML", "CSS", "JavaScript", "React"],
+      "modalidad": "Remoto",
+      "nivel": "Junior"
+    }
+  },
+  {
+    "id": 2,
+    "titulo": "Backend Developer",
+    "empresa": "CodeWorks",
+    "ubicacion": "México",
+    "descripcion": "Construcción de APIs robustas y escalables.",
+    "data": {
+      "tecnologia": ["Node.js", "Express", "MongoDB"],
+      "modalidad": "Híbrido",
+      "nivel": "Semi Senior"
+    }
+  },
+  {
+    "id": 3,
+    "titulo": "Full Stack Developer",
+    "empresa": "DevSolutions",
+    "ubicacion": "Argentina",
+    "descripcion": "Desarrollo completo de aplicaciones web end-to-end.",
+    "data": {
+      "tecnologia": ["React", "Node.js", "PostgreSQL"],
+      "modalidad": "Presencial",
+      "nivel": "Senior"
+    }
+  },
+  {
+    "id": 4,
+    "titulo": "Software Engineer",
+    "empresa": "CloudBase",
+    "ubicacion": "Estados Unidos",
+    "descripcion": "Diseño y mantenimiento de sistemas distribuidos.",
+    "data": {
+      "tecnologia": ["Java", "Spring Boot", "AWS"],
+      "modalidad": "Remoto",
+      "nivel": "Senior"
+    }
+  },
+  {
+    "id": 5,
+    "titulo": "Frontend React Developer",
+    "empresa": "PixelSoft",
+    "ubicacion": "España",
+    "descripcion": "Implementación de UI con alto enfoque en experiencia de usuario.",
+    "data": {
+      "tecnologia": ["React", "Tailwind CSS"],
+      "modalidad": "Híbrido",
+      "nivel": "Semi Senior"
+    }
+  },
+  {
+    "id": 6,
+    "titulo": "Backend Python Developer",
+    "empresa": "DataMind",
+    "ubicacion": "Colombia",
+    "descripcion": "Desarrollo de servicios backend y procesamiento de datos.",
+    "data": {
+      "tecnologia": ["Python", "Django", "PostgreSQL"],
+      "modalidad": "Remoto",
+      "nivel": "Junior"
+    }
+  },
+  {
+    "id": 7,
+    "titulo": "Mobile App Developer",
+    "empresa": "Appify",
+    "ubicacion": "Chile",
+    "descripcion": "Desarrollo de aplicaciones móviles multiplataforma.",
+    "data": {
+      "tecnologia": ["Flutter", "Dart"],
+      "modalidad": "Presencial",
+      "nivel": "Semi Senior"
+    }
+  },
+  {
+    "id": 8,
+    "titulo": "DevOps Engineer",
+    "empresa": "InfraCloud",
+    "ubicacion": "Remoto",
+    "descripcion": "Automatización de despliegues y monitoreo de infraestructura.",
+    "data": {
+      "tecnologia": ["Docker", "Kubernetes", "CI/CD"],
+      "modalidad": "Remoto",
+      "nivel": "Senior"
+    }
+  },
+  {
+    "id": 9,
+    "titulo": "Junior Web Developer",
+    "empresa": "StartWeb",
+    "ubicacion": "Perú",
+    "descripcion": "Mantenimiento y desarrollo de sitios web corporativos.",
+    "data": {
+      "tecnologia": ["HTML", "CSS", "JavaScript"],
+      "modalidad": "Presencial",
+      "nivel": "Junior"
+    }
+  },
+  {
+    "id": 10,
+    "titulo": "QA Automation Engineer",
+    "empresa": "QualitySoft",
+    "ubicacion": "Remoto",
+    "descripcion": "Automatización de pruebas y aseguramiento de calidad.",
+    "data": {
+      "tecnologia": ["Selenium", "JavaScript"],
+      "modalidad": "Remoto",
+      "nivel": "Semi Senior"
+    }
+  },
+  {
+    "id": 11,
+    "titulo": "Game Developer",
+    "empresa": "PlayStudio",
+    "ubicacion": "Canadá",
+    "descripcion": "Desarrollo de videojuegos 2D y 3D.",
+    "data": {
+      "tecnologia": ["Unity", "C#"],
+      "modalidad": "Presencial",
+      "nivel": "Senior"
+    }
+  },
+  {
+    "id": 12,
+    "titulo": "Frontend Angular Developer",
+    "empresa": "WebCore",
+    "ubicacion": "Brasil",
+    "descripcion": "Desarrollo de aplicaciones empresariales.",
+    "data": {
+      "tecnologia": ["Angular", "TypeScript"],
+      "modalidad": "Híbrido",
+      "nivel": "Semi Senior"
+    }
+  },
+  {
+    "id": 13,
+    "titulo": "Backend Java Developer",
+    "empresa": "EnterpriseSoft",
+    "ubicacion": "México",
+    "descripcion": "Desarrollo de sistemas empresariales.",
+    "data": {
+      "tecnologia": ["Java", "Spring"],
+      "modalidad": "Presencial",
+      "nivel": "Senior"
+    }
+  },
+  {
+    "id": 14,
+    "titulo": "Cloud Engineer",
+    "empresa": "SkyNet",
+    "ubicacion": "Remoto",
+    "descripcion": "Gestión de infraestructura cloud.",
+    "data": {
+      "tecnologia": ["AWS", "Terraform"],
+      "modalidad": "Remoto",
+      "nivel": "Senior"
+    }
+  },
+  {
+    "id": 15,
+    "titulo": "Junior Backend Developer",
+    "empresa": "APIWorks",
+    "ubicacion": "Uruguay",
+    "descripcion": "Soporte y desarrollo de servicios backend.",
+    "data": {
+      "tecnologia": ["Node.js", "MySQL"],
+      "modalidad": "Híbrido",
+      "nivel": "Junior"
+    }
+  },
+  {
+    "id": 16,
+    "titulo": "Data Engineer",
+    "empresa": "BigDataCorp",
+    "ubicacion": "Estados Unidos",
+    "descripcion": "Procesamiento y análisis de grandes volúmenes de datos.",
+    "data": {
+      "tecnologia": ["Python", "Spark", "SQL"],
+      "modalidad": "Remoto",
+      "nivel": "Senior"
+    }
+  },
+  {
+    "id": 17,
+    "titulo": "Frontend Vue Developer",
+    "empresa": "UIFactory",
+    "ubicacion": "España",
+    "descripcion": "Construcción de interfaces interactivas.",
+    "data": {
+      "tecnologia": ["Vue.js", "CSS"],
+      "modalidad": "Presencial",
+      "nivel": "Junior"
+    }
+  },
+  {
+    "id": 18,
+    "titulo": "Full Stack JavaScript Developer",
+    "empresa": "JSWorld",
+    "ubicacion": "Remoto",
+    "descripcion": "Desarrollo web completo usando JavaScript.",
+    "data": {
+      "tecnologia": ["JavaScript", "React", "Node.js"],
+      "modalidad": "Remoto",
+      "nivel": "Semi Senior"
+    }
+  },
+  {
+    "id": 19,
+    "titulo": "Systems Analyst",
+    "empresa": "TechAnalysis",
+    "ubicacion": "Chile",
+    "descripcion": "Análisis y diseño de soluciones tecnológicas.",
+    "data": {
+      "tecnologia": ["UML", "SQL"],
+      "modalidad": "Presencial",
+      "nivel": "Senior"
+    }
+  },
+  {
+    "id": 20,
+    "titulo": "Mobile Android Developer",
+    "empresa": "DroidApps",
+    "ubicacion": "Argentina",
+    "descripcion": "Desarrollo de aplicaciones Android nativas.",
+    "data": {
+      "tecnologia": ["Kotlin", "Android SDK"],
+      "modalidad": "Híbrido",
+      "nivel": "Semi Senior"
+    }
+  },
+  {
+    "id": 21,
+    "titulo": "Mobile iOS Developer",
+    "empresa": "AppleDev",
+    "ubicacion": "Estados Unidos",
+    "descripcion": "Desarrollo de aplicaciones iOS.",
+    "data": {
+      "tecnologia": ["Swift", "iOS SDK"],
+      "modalidad": "Presencial",
+      "nivel": "Senior"
+    }
+  },
+  {
+    "id": 22,
+    "titulo": "Junior Software Tester",
+    "empresa": "TestLab",
+    "ubicacion": "Colombia",
+    "descripcion": "Ejecución de pruebas manuales y reporte de bugs.",
+    "data": {
+      "tecnologia": ["Jira", "Testing Manual"],
+      "modalidad": "Presencial",
+      "nivel": "Junior"
+    }
+  },
+  {
+    "id": 23,
+    "titulo": "Security Engineer",
+    "empresa": "SecureTech",
+    "ubicacion": "Remoto",
+    "descripcion": "Implementación de medidas de seguridad en software.",
+    "data": {
+      "tecnologia": ["OWASP", "Pentesting"],
+      "modalidad": "Remoto",
+      "nivel": "Senior"
+    }
+  },
+  {
+    "id": 24,
+    "titulo": "AI Developer",
+    "empresa": "SmartAI",
+    "ubicacion": "Canadá",
+    "descripcion": "Desarrollo de modelos de inteligencia artificial.",
+    "data": {
+      "tecnologia": ["Python", "TensorFlow"],
+      "modalidad": "Híbrido",
+      "nivel": "Senior"
+    }
+  },
+  {
+    "id": 25,
+    "titulo": "Frontend UI Developer",
+    "empresa": "DesignCode",
+    "ubicacion": "España",
+    "descripcion": "Traducción de diseños a código funcional.",
+    "data": {
+      "tecnologia": ["HTML", "CSS", "Figma"],
+      "modalidad": "Presencial",
+      "nivel": "Junior"
+    }
+  },
+  {
+    "id": 26,
+    "titulo": "Backend PHP Developer",
+    "empresa": "WebSystems",
+    "ubicacion": "México",
+    "descripcion": "Mantenimiento de sistemas web existentes.",
+    "data": {
+      "tecnologia": ["PHP", "Laravel"],
+      "modalidad": "Híbrido",
+      "nivel": "Semi Senior"
+    }
+  },
+  {
+    "id": 27,
+    "titulo": "Blockchain Developer",
+    "empresa": "CryptoDev",
+    "ubicacion": "Remoto",
+    "descripcion": "Desarrollo de smart contracts y soluciones blockchain.",
+    "data": {
+      "tecnologia": ["Solidity", "Ethereum"],
+      "modalidad": "Remoto",
+      "nivel": "Senior"
+    }
+  },
+  {
+    "id": 28,
+    "titulo": "Technical Support Engineer",
+    "empresa": "HelpDeskPro",
+    "ubicacion": "Perú",
+    "descripcion": "Soporte técnico para aplicaciones internas.",
+    "data": {
+      "tecnologia": ["Linux", "Networking"],
+      "modalidad": "Presencial",
+      "nivel": "Junior"
+    }
+  },
+  {
+    "id": 29,
+    "titulo": "Site Reliability Engineer",
+    "empresa": "ScaleOps",
+    "ubicacion": "Remoto",
+    "descripcion": "Garantizar la estabilidad y rendimiento de sistemas.",
+    "data": {
+      "tecnologia": ["Kubernetes", "Monitoring"],
+      "modalidad": "Remoto",
+      "nivel": "Senior"
+    }
+  },
+  {
+    "id": 30,
+    "titulo": "Software Architect",
+    "empresa": "FutureTech",
+    "ubicacion": "Estados Unidos",
+    "descripcion": "Diseño de arquitecturas de software escalables.",
+    "data": {
+      "tecnologia": ["Microservicios", "Cloud"],
+      "modalidad": "Híbrido",
+      "nivel": "Senior"
+    }
+  }
+]
