@@ -1,6 +1,6 @@
 import { JobCard } from "./JobCard.jsx";
 import data from "./../data.json";
-export function JobListings() {
+export function JobListings(job) {
   return (
     <section className="border boder-gray-300 rounded-xl overflow-hidden">
       {data.map((job) => (
