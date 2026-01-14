@@ -1,10 +1,13 @@
 import { useId } from "react";
 
-export function Search() {
+export function Search({ onSearch }) {
   const searchId = useId(),
     tecnologyId = useId(),
     locationId = useId(),
     experienceLevelId = useId();
+  function handleChangeSearch(event) {
+    onSearch(event.target.value);
+  }
   return (
     <>
       <form className="mb-6">
@@ -15,6 +18,7 @@ export function Search() {
             name={searchId}
             id={searchId}
             placeholder="Buscar trabajos, empresas o habilidades"
+            onChange={handleChangeSearch}
           />
           <button
             type="submit"

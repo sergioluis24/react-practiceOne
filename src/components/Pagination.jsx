@@ -28,7 +28,7 @@ export function Pagination({ currentPage = 1, totalPages = 5, onPageChange }) {
   }
   return (
     <>
-      <section className="flex items-center flex-wrap">
+      <section className="flex items-center flex-wrap justify-center">
         <a
           className="invert opacity-60 w-14 px-5 py-3 rounded-xl cursor-pointer hover:bg-amber-50 hover:text-gray-900 hover:invert-0"
           style={isFirstPage}

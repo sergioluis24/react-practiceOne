@@ -6,19 +6,35 @@ import jobs from "./../data.json";
 
 export function ContentPrimary() {
   const [currentPage, setCurrentPage] = useState(1);
+  const [textSearch, setTextSearch] = useState("");
   const RESULTS_PER_PAGE = 5;
 
   const totalPages = Math.ceil(jobs.length / RESULTS_PER_PAGE);
 
+  let jobsFilteredForText =
+    textSearch !== ""
+      ? jobs.filter((job) =>
+          job.titulo.toLowerCase().includes(textSearch.toLowerCase())
+        )
+      : jobs;
+
+  const jobsRecorted = jobsFilteredForText.slice(
+    (currentPage - 1) * RESULTS_PER_PAGE,
+    currentPage * RESULTS_PER_PAGE
+  );
+
   function handlePageChange(page) {
     setCurrentPage(page);
+  }
+  function handleChangeSearch(text) {
+    setTextSearch(text);
   }
   return (
     <>
       <main className="grow shrink w-[80%] mx-auto">
         <h1 className="mb-6 text-2xl  ">Plataforma de empleos</h1>
-        <Search />
-        <JobListings jobs={jobs} />
+        <Search onSearch={handleChangeSearch} />
+        <JobListings jobs={jobsRecorted} />
         <Pagination
           currentPage={currentPage}
           totalPages={totalPages}
