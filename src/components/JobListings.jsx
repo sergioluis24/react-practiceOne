@@ -1,10 +1,9 @@
 import { JobCard } from "./JobCard.jsx";
-import data from "./../data.json";
-export function JobListings() {
+export function JobListings({ jobs }) {
   return (
     <section className="mb-10 border boder-gray-300 rounded-xl overflow-hidden">
-      {data.map((job, index) => (
-        <JobCard key={job.id} job={job} isLast={index === data.length - 1} />
+      {jobs.map((job) => (
+        <JobCard job={job} key={job.id} isLast={job.length - 1} />
       ))}
     </section>
   );
