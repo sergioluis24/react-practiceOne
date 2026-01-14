@@ -7,18 +7,32 @@ import jobs from "./../data.json";
 export function ContentPrimary() {
   const [currentPage, setCurrentPage] = useState(1);
   const [textSearch, setTextSearch] = useState("");
+  const [filtersSelect, setFilterSelect] = useState({
+    tecnology: "",
+    location: "",
+    experienceLevel: "",
+  });
   const RESULTS_PER_PAGE = 5;
 
-  const totalPages = Math.ceil(jobs.length / RESULTS_PER_PAGE);
+  const jobsFilteredBySelect = jobs.filter(
+    (job) =>
+      (filtersSelect.tecnology === "" ||
+        job.data.tecnologia.includes(filtersSelect.tecnology)) &&
+      (filtersSelect.location === "" ||
+        job.ubicacion === filtersSelect.location) &&
+      (filtersSelect.experienceLevel === "" ||
+        job.data.nivel === filtersSelect.experienceLevel)
+  );
 
-  let jobsFilteredForText =
+  const jobsFilteredByText =
     textSearch !== ""
-      ? jobs.filter((job) =>
+      ? jobsFilteredBySelect.filter((job) =>
           job.titulo.toLowerCase().includes(textSearch.toLowerCase())
         )
-      : jobs;
+      : jobsFilteredBySelect;
 
-  const jobsRecorted = jobsFilteredForText.slice(
+  const totalPages = Math.ceil(jobs.length / RESULTS_PER_PAGE);
+  const jobsRecorted = jobsFilteredByText.slice(
     (currentPage - 1) * RESULTS_PER_PAGE,
     currentPage * RESULTS_PER_PAGE
   );
@@ -29,11 +43,17 @@ export function ContentPrimary() {
   function handleChangeSearch(text) {
     setTextSearch(text);
   }
+  function handleChangeSelect(formData) {
+    setFilterSelect(formData);
+  }
   return (
     <>
       <main className="grow shrink w-[80%] mx-auto">
         <h1 className="mb-6 text-2xl  ">Plataforma de empleos</h1>
-        <Search onSearch={handleChangeSearch} />
+        <Search
+          onSearch={handleChangeSearch}
+          onChangeSelect={handleChangeSelect}
+        />
         <JobListings jobs={jobsRecorted} />
         <Pagination
           currentPage={currentPage}

@@ -1,6 +1,6 @@
 import { useId } from "react";
 
-export function Search({ onSearch }) {
+export function Search({ onSearch, onChangeSelect }) {
   const searchId = useId(),
     tecnologyId = useId(),
     locationId = useId(),
@@ -8,9 +8,18 @@ export function Search({ onSearch }) {
   function handleChangeSearch(event) {
     onSearch(event.target.value);
   }
+  function handleChangeSelect(event) {
+    const formData = new FormData(event.currentTarget);
+    const filters = {
+      tecnology: formData.get(tecnologyId),
+      location: formData.get(locationId),
+      experienceLevel: formData.get(experienceLevelId),
+    };
+    onChangeSelect(filters);
+  }
   return (
     <>
-      <form className="mb-6">
+      <form className="mb-6" onChange={handleChangeSelect}>
         <section className="flex relative h-11 mb-3">
           <input
             className="bg-[#353c4a] text-[#f2f4f3] block w-full h-full py-2 px-3 border-0 rounded-md"
@@ -36,9 +45,9 @@ export function Search({ onSearch }) {
             <option value="">Tecnologia</option>
 
             <option value="javascript">Javascript</option>
-            <option value="python">Python</option>
+            <option value="MongoDB">MongoDB</option>
             <option value="react">React</option>
-            <option value="nodejs">Node.js</option>
+            <option value="Node.js">Node.js</option>
           </select>
           <select
             className="bg-[#353c4a] text-[#f2f4f3] w-3/12 p-2 rounded-md"
