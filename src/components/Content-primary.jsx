@@ -19,9 +19,10 @@ export function ContentPrimary() {
       (filtersSelect.tecnology === "" ||
         job.data.tecnologia.includes(filtersSelect.tecnology)) &&
       (filtersSelect.location === "" ||
-        job.ubicacion === filtersSelect.location) &&
+        job.ubicacion.toLowerCase() === filtersSelect.location.toLowerCase()) &&
       (filtersSelect.experienceLevel === "" ||
-        job.data.nivel === filtersSelect.experienceLevel)
+        job.data.nivel.toLowerCase() ===
+          filtersSelect.experienceLevel.toLowerCase())
   );
 
   const jobsFilteredByText =
@@ -31,7 +32,7 @@ export function ContentPrimary() {
         )
       : jobsFilteredBySelect;
 
-  const totalPages = Math.ceil(jobs.length / RESULTS_PER_PAGE);
+  const totalPages = Math.ceil(jobsFilteredByText.length / RESULTS_PER_PAGE);
   const jobsRecorted = jobsFilteredByText.slice(
     (currentPage - 1) * RESULTS_PER_PAGE,
     currentPage * RESULTS_PER_PAGE

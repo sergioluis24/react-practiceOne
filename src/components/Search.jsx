@@ -44,10 +44,15 @@ export function Search({ onSearch, onChangeSelect }) {
           >
             <option value="">Tecnologia</option>
 
-            <option value="javascript">Javascript</option>
+            <option value="JavaScript">Javascript</option>
             <option value="MongoDB">MongoDB</option>
-            <option value="react">React</option>
+            <option value="React">React</option>
             <option value="Node.js">Node.js</option>
+            <option value="AWS">AWS</option>
+            <option value="Java">Java</option>
+            <option value="Express">Express</option>
+            <option value="Docker">Docker</option>
+            <option value="Python">Python</option>
           </select>
           <select
             className="bg-[#353c4a] text-[#f2f4f3] w-3/12 p-2 rounded-md"
@@ -56,10 +61,9 @@ export function Search({ onSearch, onChangeSelect }) {
           >
             <option value="">Ubicacion</option>
 
-            <option value="remoto">Remoto</option>
-            <option value="santiago">Santiago</option>
-            <option value="lavega">La vega</option>
-            <option value="santodomingo">Santo Domingo</option>
+            <option value="Remoto">Remoto</option>
+            <option value="Presencial">Presencial</option>
+            <option value="Híbrido">Híbrido</option>
           </select>
           <select
             className="bg-[#353c4a] text-[#f2f4f3] w-4/12 p-2 rounded-md"
@@ -68,10 +72,9 @@ export function Search({ onSearch, onChangeSelect }) {
           >
             <option value="">Nivel de experiencia</option>
 
-            <option value="junior">Junior</option>
-            <option value="mid">Mid-level</option>
-            <option value="senior">Senior</option>
-            <option value="lead">Lead</option>
+            <option value="Junior">Junior</option>
+            <option value="Semi Senior">Semi Senior</option>
+            <option value="Senior">Senior</option>
           </select>
         </section>
       </form>
