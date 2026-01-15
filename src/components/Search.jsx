@@ -31,7 +31,7 @@ export function Search({ onSearch, onChangeSelect }) {
           />
           <button
             type="submit"
-            className="absolute top-[5%] right-1 bg-[#5d6471] text-[#f2f4f3] h-9/10 px-6 rounded-md cursor-pointer"
+            className="hidden pointer-events-none absolute top-[5%] right-1 bg-[#5d6471] text-[#f2f4f3] h-9/10 px-6 rounded-md cursor-pointer"
           >
             Buscar
           </button>

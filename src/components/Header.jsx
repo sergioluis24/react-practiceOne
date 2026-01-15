@@ -3,15 +3,19 @@ export function Header() {
   return (
     <>
       <header className="navbar w-full py-8">
-        <nav className="container flex mx-auto justify-between">
+        <nav className="container flex mx-auto justify-between items-center">
           <div className="w-12 h-12">
-            <img
-              src={logo}
-              alt="Logo Debjobs"
-              className="w-full h-auto rounded-full"
-            />
+            <a href="/">
+              <img
+                src={logo}
+                alt="Logo Debjobs"
+                className="w-full h-auto rounded-full"
+              />
+            </a>
           </div>
-          <button className="cursor-pointer">Publicar un empleo</button>
+          <a href="/search" className="cursor-pointer">
+            Publicar un empleo
+          </a>
         </nav>
       </header>
     </>
