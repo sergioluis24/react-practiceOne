@@ -11,9 +11,10 @@ export function SearchPage() {
     tecnology: "",
     location: "",
     experienceLevel: "",
+    salary: 0,
   });
   const RESULTS_PER_PAGE = 5;
-
+  const MINSALARY = filtersSelect.salary ? filtersSelect.salary : 0;
   const jobsFilteredBySelect = jobs.filter(
     (job) =>
       (filtersSelect.tecnology === "" ||
@@ -22,7 +23,8 @@ export function SearchPage() {
         job.ubicacion.toLowerCase() === filtersSelect.location.toLowerCase()) &&
       (filtersSelect.experienceLevel === "" ||
         job.data.nivel.toLowerCase() ===
-          filtersSelect.experienceLevel.toLowerCase())
+          filtersSelect.experienceLevel.toLowerCase()) &&
+      job.salario >= MINSALARY
   );
 
   const jobsFilteredByText =
@@ -43,9 +45,11 @@ export function SearchPage() {
   }
   function handleChangeSearch(text) {
     setTextSearch(text);
+    setCurrentPage(1);
   }
   function handleChangeSelect(formData) {
     setFilterSelect(formData);
+    setCurrentPage(1);
   }
   return (
     <>

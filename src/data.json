@@ -4,59 +4,64 @@
     "titulo": "Frontend Developer",
     "empresa": "TechCompany 1",
     "ubicacion": "Presencial",
-    "descripcion": "Trabajará en el ciclo completo de desarrollo de software, desde el análisis hasta el despliegue, aportando soluciones técnicas sólidas, colaborando con el equipo y asegurando entregas confiables y alineadas con las necesidades del negocio.",
+    "descripcion": "Responsable del desarrollo, mantenimiento y optimización de aplicaciones de software, colaborando con equipos multidisciplinarios, aplicando buenas prácticas de código, participando en revisiones técnicas y asegurando soluciones escalables, seguras y alineadas con los objetivos estratégicos del negocio.",
+    "salario": 2200,
     "data": {
-      "tecnologia": ["AWS", "Docker", "Kubernetes"],
-      "modalidad": "Presencial",
-      "nivel": "Semi Senior"
+      "tecnologia": ["HTML", "CSS", "JavaScript", "React"],
+      "modalidad": "Remoto",
+      "nivel": "Junior"
     }
   },
   {
     "id": 2,
     "titulo": "Backend Developer",
     "empresa": "TechCompany 2",
-    "ubicacion": "Híbrido",
-    "descripcion": "Encargado de construir y mantener funcionalidades clave del producto, resolviendo problemas complejos, aplicando patrones de diseño, optimizando procesos y garantizando una experiencia estable, eficiente y alineada a los requerimientos del cliente.",
+    "ubicacion": "Remoto",
+    "descripcion": "Participará activamente en el diseño e implementación de soluciones tecnológicas modernas, trabajando con arquitecturas escalables, asegurando calidad del código, rendimiento óptimo, documentación clara y colaboración constante con diseñadores, testers y líderes técnicos del proyecto.",
+    "salario": 2600,
     "data": {
-      "tecnologia": ["Java", "Spring Boot"],
-      "modalidad": "Híbrido",
-      "nivel": "Senior"
+      "tecnologia": ["AWS", "Docker", "Kubernetes"],
+      "modalidad": "Presencial",
+      "nivel": "Junior"
     }
   },
   {
     "id": 3,
     "titulo": "Full Stack Developer",
     "empresa": "TechCompany 3",
-    "ubicacion": "Presencial",
-    "descripcion": "Trabajará en el ciclo completo de desarrollo de software, desde el análisis hasta el despliegue, aportando soluciones técnicas sólidas, colaborando con el equipo y asegurando entregas confiables y alineadas con las necesidades del negocio.",
+    "ubicacion": "Híbrido",
+    "descripcion": "Responsable del desarrollo, mantenimiento y optimización de aplicaciones de software, colaborando con equipos multidisciplinarios, aplicando buenas prácticas de código, participando en revisiones técnicas y asegurando soluciones escalables, seguras y alineadas con los objetivos estratégicos del negocio.",
+    "salario": 1800,
     "data": {
-      "tecnologia": ["Node.js", "Express", "MongoDB"],
-      "modalidad": "Remoto",
-      "nivel": "Senior"
+      "tecnologia": ["Angular", "TypeScript"],
+      "modalidad": "Híbrido",
+      "nivel": "Junior"
     }
   },
   {
     "id": 4,
     "titulo": "Software Engineer",
     "empresa": "TechCompany 4",
-    "ubicacion": "Remoto",
-    "descripcion": "Responsable del desarrollo, mantenimiento y optimización de aplicaciones de software, colaborando con equipos multidisciplinarios, aplicando buenas prácticas de código, participando en revisiones técnicas y asegurando soluciones escalables, seguras y alineadas con los objetivos del negocio.",
+    "ubicacion": "Híbrido",
+    "descripcion": "Trabajará en el ciclo completo de desarrollo de software, desde el análisis hasta el despliegue, aportando soluciones técnicas sólidas, colaborando con el equipo y asegurando entregas confiables alineadas con las necesidades del negocio.",
+    "salario": 1200,
     "data": {
-      "tecnologia": ["Node.js", "Express", "MongoDB"],
-      "modalidad": "Híbrido",
-      "nivel": "Senior"
+      "tecnologia": ["AWS", "Docker", "Kubernetes"],
+      "modalidad": "Remoto",
+      "nivel": "Junior"
     }
   },
   {
     "id": 5,
     "titulo": "React Developer",
     "empresa": "TechCompany 5",
-    "ubicacion": "Presencial",
-    "descripcion": "Trabajará en el ciclo completo de desarrollo de software, desde el análisis hasta el despliegue, aportando soluciones técnicas sólidas, colaborando con el equipo y asegurando entregas confiables y alineadas con las necesidades del negocio.",
+    "ubicacion": "Remoto",
+    "descripcion": "Responsable del desarrollo, mantenimiento y optimización de aplicaciones de software, colaborando con equipos multidisciplinarios, aplicando buenas prácticas de código, participando en revisiones técnicas y asegurando soluciones escalables, seguras y alineadas con los objetivos estratégicos del negocio.",
+    "salario": 2200,
     "data": {
-      "tecnologia": ["Java", "Spring Boot"],
-      "modalidad": "Remoto",
-      "nivel": "Semi Senior"
+      "tecnologia": ["Node.js", "Express", "MongoDB"],
+      "modalidad": "Híbrido",
+      "nivel": "Senior"
     }
   },
   {
@@ -64,11 +69,12 @@
     "titulo": "Python Backend Developer",
     "empresa": "TechCompany 6",
     "ubicacion": "Híbrido",
-    "descripcion": "Responsable del desarrollo, mantenimiento y optimización de aplicaciones de software, colaborando con equipos multidisciplinarios, aplicando buenas prácticas de código, participando en revisiones técnicas y asegurando soluciones escalables, seguras y alineadas con los objetivos del negocio.",
+    "descripcion": "Responsable del desarrollo, mantenimiento y optimización de aplicaciones de software, colaborando con equipos multidisciplinarios, aplicando buenas prácticas de código, participando en revisiones técnicas y asegurando soluciones escalables, seguras y alineadas con los objetivos estratégicos del negocio.",
+    "salario": 4000,
     "data": {
-      "tecnologia": ["AWS", "Docker", "Kubernetes"],
+      "tecnologia": ["Node.js", "Express", "MongoDB"],
       "modalidad": "Híbrido",
-      "nivel": "Semi Senior"
+      "nivel": "Senior"
     }
   },
   {
@@ -76,34 +82,37 @@
     "titulo": "Mobile App Developer",
     "empresa": "TechCompany 7",
     "ubicacion": "Híbrido",
-    "descripcion": "Trabajará en el ciclo completo de desarrollo de software, desde el análisis hasta el despliegue, aportando soluciones técnicas sólidas, colaborando con el equipo y asegurando entregas confiables y alineadas con las necesidades del negocio.",
+    "descripcion": "Trabajará en el ciclo completo de desarrollo de software, desde el análisis hasta el despliegue, aportando soluciones técnicas sólidas, colaborando con el equipo y asegurando entregas confiables alineadas con las necesidades del negocio.",
+    "salario": 1800,
     "data": {
-      "tecnologia": ["Node.js", "Express", "MongoDB"],
+      "tecnologia": ["HTML", "CSS", "JavaScript", "React"],
       "modalidad": "Remoto",
-      "nivel": "Senior"
+      "nivel": "Junior"
     }
   },
   {
     "id": 8,
     "titulo": "DevOps Engineer",
     "empresa": "TechCompany 8",
-    "ubicacion": "Presencial",
-    "descripcion": "Desarrollará soluciones de software enfocadas en escalabilidad y rendimiento, colaborando en decisiones técnicas, integraciones con terceros, mejoras continuas y asegurando estándares de calidad, seguridad y mantenibilidad del sistema.",
+    "ubicacion": "Remoto",
+    "descripcion": "Trabajará en el ciclo completo de desarrollo de software, desde el análisis hasta el despliegue, aportando soluciones técnicas sólidas, colaborando con el equipo y asegurando entregas confiables alineadas con las necesidades del negocio.",
+    "salario": 4000,
     "data": {
-      "tecnologia": ["React", "JavaScript", "CSS"],
-      "modalidad": "Remoto",
-      "nivel": "Semi Senior"
+      "tecnologia": ["AWS", "Docker", "Kubernetes"],
+      "modalidad": "Presencial",
+      "nivel": "Senior"
     }
   },
   {
     "id": 9,
     "titulo": "Junior Web Developer",
     "empresa": "TechCompany 9",
-    "ubicacion": "Híbrido",
-    "descripcion": "Desarrollará soluciones de software enfocadas en escalabilidad y rendimiento, colaborando en decisiones técnicas, integraciones con terceros, mejoras continuas y asegurando estándares de calidad, seguridad y mantenibilidad del sistema.",
+    "ubicacion": "Remoto",
+    "descripcion": "Trabajará en el ciclo completo de desarrollo de software, desde el análisis hasta el despliegue, aportando soluciones técnicas sólidas, colaborando con el equipo y asegurando entregas confiables alineadas con las necesidades del negocio.",
+    "salario": 4000,
     "data": {
-      "tecnologia": ["Java", "Spring Boot"],
-      "modalidad": "Híbrido",
+      "tecnologia": ["HTML", "CSS", "JavaScript", "React"],
+      "modalidad": "Remoto",
       "nivel": "Junior"
     }
   },
@@ -111,11 +120,12 @@
     "id": 10,
     "titulo": "QA Automation Engineer",
     "empresa": "TechCompany 10",
-    "ubicacion": "Híbrido",
-    "descripcion": "Participará activamente en el diseño e implementación de soluciones tecnológicas, trabajando con arquitecturas modernas, asegurando calidad del código, rendimiento óptimo, correcta documentación y colaboración constante con diseñadores, testers y líderes técnicos.",
+    "ubicacion": "Presencial",
+    "descripcion": "Encargado de construir y mantener funcionalidades clave del producto, resolviendo problemas complejos, aplicando patrones de diseño, optimizando procesos internos y garantizando una experiencia estable, eficiente y alineada a los requerimientos del cliente.",
+    "salario": 4800,
     "data": {
       "tecnologia": ["Python", "Django", "PostgreSQL"],
-      "modalidad": "Remoto",
+      "modalidad": "Presencial",
       "nivel": "Junior"
     }
   },
@@ -123,12 +133,13 @@
     "id": 11,
     "titulo": "Game Developer",
     "empresa": "TechCompany 11",
-    "ubicacion": "Presencial",
-    "descripcion": "Participará activamente en el diseño e implementación de soluciones tecnológicas, trabajando con arquitecturas modernas, asegurando calidad del código, rendimiento óptimo, correcta documentación y colaboración constante con diseñadores, testers y líderes técnicos.",
+    "ubicacion": "Remoto",
+    "descripcion": "Responsable del desarrollo, mantenimiento y optimización de aplicaciones de software, colaborando con equipos multidisciplinarios, aplicando buenas prácticas de código, participando en revisiones técnicas y asegurando soluciones escalables, seguras y alineadas con los objetivos estratégicos del negocio.",
+    "salario": 2600,
     "data": {
-      "tecnologia": ["Java", "Spring Boot"],
-      "modalidad": "Híbrido",
-      "nivel": "Senior"
+      "tecnologia": ["Node.js", "Express", "MongoDB"],
+      "modalidad": "Presencial",
+      "nivel": "Semi Senior"
     }
   },
   {
@@ -136,11 +147,12 @@
     "titulo": "Angular Developer",
     "empresa": "TechCompany 12",
     "ubicacion": "Remoto",
-    "descripcion": "Desarrollará soluciones de software enfocadas en escalabilidad y rendimiento, colaborando en decisiones técnicas, integraciones con terceros, mejoras continuas y asegurando estándares de calidad, seguridad y mantenibilidad del sistema.",
+    "descripcion": "Desarrollará soluciones de software enfocadas en escalabilidad y rendimiento, colaborando en decisiones técnicas, integraciones con servicios externos, mejoras continuas y asegurando altos estándares de calidad, seguridad y mantenibilidad del sistema.",
+    "salario": 1500,
     "data": {
-      "tecnologia": ["Python", "Django", "PostgreSQL"],
-      "modalidad": "Remoto",
-      "nivel": "Semi Senior"
+      "tecnologia": ["AWS", "Docker", "Kubernetes"],
+      "modalidad": "Presencial",
+      "nivel": "Senior"
     }
   },
   {
@@ -148,10 +160,11 @@
     "titulo": "Java Backend Developer",
     "empresa": "TechCompany 13",
     "ubicacion": "Híbrido",
-    "descripcion": "Encargado de construir y mantener funcionalidades clave del producto, resolviendo problemas complejos, aplicando patrones de diseño, optimizando procesos y garantizando una experiencia estable, eficiente y alineada a los requerimientos del cliente.",
+    "descripcion": "Encargado de construir y mantener funcionalidades clave del producto, resolviendo problemas complejos, aplicando patrones de diseño, optimizando procesos internos y garantizando una experiencia estable, eficiente y alineada a los requerimientos del cliente.",
+    "salario": 4800,
     "data": {
-      "tecnologia": ["AWS", "Docker", "Kubernetes"],
-      "modalidad": "Remoto",
+      "tecnologia": ["Python", "Django", "PostgreSQL"],
+      "modalidad": "Híbrido",
       "nivel": "Semi Senior"
     }
   },
@@ -159,11 +172,12 @@
     "id": 14,
     "titulo": "Cloud Engineer",
     "empresa": "TechCompany 14",
-    "ubicacion": "Remoto",
-    "descripcion": "Participará activamente en el diseño e implementación de soluciones tecnológicas, trabajando con arquitecturas modernas, asegurando calidad del código, rendimiento óptimo, correcta documentación y colaboración constante con diseñadores, testers y líderes técnicos.",
+    "ubicacion": "Híbrido",
+    "descripcion": "Responsable del desarrollo, mantenimiento y optimización de aplicaciones de software, colaborando con equipos multidisciplinarios, aplicando buenas prácticas de código, participando en revisiones técnicas y asegurando soluciones escalables, seguras y alineadas con los objetivos estratégicos del negocio.",
+    "salario": 1200,
     "data": {
-      "tecnologia": ["AWS", "Docker", "Kubernetes"],
-      "modalidad": "Híbrido",
+      "tecnologia": ["PHP", "Laravel"],
+      "modalidad": "Remoto",
       "nivel": "Senior"
     }
   },
@@ -171,10 +185,11 @@
     "id": 15,
     "titulo": "Junior Backend Developer",
     "empresa": "TechCompany 15",
-    "ubicacion": "Híbrido",
-    "descripcion": "Desarrollará soluciones de software enfocadas en escalabilidad y rendimiento, colaborando en decisiones técnicas, integraciones con terceros, mejoras continuas y asegurando estándares de calidad, seguridad y mantenibilidad del sistema.",
+    "ubicacion": "Presencial",
+    "descripcion": "Desarrollará soluciones de software enfocadas en escalabilidad y rendimiento, colaborando en decisiones técnicas, integraciones con servicios externos, mejoras continuas y asegurando altos estándares de calidad, seguridad y mantenibilidad del sistema.",
+    "salario": 4000,
     "data": {
-      "tecnologia": ["React", "JavaScript", "CSS"],
+      "tecnologia": ["HTML", "CSS", "JavaScript", "React"],
       "modalidad": "Remoto",
       "nivel": "Junior"
     }
@@ -184,23 +199,25 @@
     "titulo": "Data Engineer",
     "empresa": "TechCompany 16",
     "ubicacion": "Híbrido",
-    "descripcion": "Encargado de construir y mantener funcionalidades clave del producto, resolviendo problemas complejos, aplicando patrones de diseño, optimizando procesos y garantizando una experiencia estable, eficiente y alineada a los requerimientos del cliente.",
+    "descripcion": "Responsable del desarrollo, mantenimiento y optimización de aplicaciones de software, colaborando con equipos multidisciplinarios, aplicando buenas prácticas de código, participando en revisiones técnicas y asegurando soluciones escalables, seguras y alineadas con los objetivos estratégicos del negocio.",
+    "salario": 4800,
     "data": {
-      "tecnologia": ["Node.js", "Express", "MongoDB"],
-      "modalidad": "Híbrido",
-      "nivel": "Junior"
+      "tecnologia": ["AWS", "Docker", "Kubernetes"],
+      "modalidad": "Remoto",
+      "nivel": "Senior"
     }
   },
   {
     "id": 17,
     "titulo": "Vue Developer",
     "empresa": "TechCompany 17",
-    "ubicacion": "Remoto",
-    "descripcion": "Trabajará en el ciclo completo de desarrollo de software, desde el análisis hasta el despliegue, aportando soluciones técnicas sólidas, colaborando con el equipo y asegurando entregas confiables y alineadas con las necesidades del negocio.",
+    "ubicacion": "Presencial",
+    "descripcion": "Responsable del desarrollo, mantenimiento y optimización de aplicaciones de software, colaborando con equipos multidisciplinarios, aplicando buenas prácticas de código, participando en revisiones técnicas y asegurando soluciones escalables, seguras y alineadas con los objetivos estratégicos del negocio.",
+    "salario": 900,
     "data": {
-      "tecnologia": ["AWS", "Docker", "Kubernetes"],
+      "tecnologia": ["Angular", "TypeScript"],
       "modalidad": "Presencial",
-      "nivel": "Senior"
+      "nivel": "Junior"
     }
   },
   {
@@ -208,9 +225,10 @@
     "titulo": "Full Stack JavaScript Developer",
     "empresa": "TechCompany 18",
     "ubicacion": "Presencial",
-    "descripcion": "Encargado de construir y mantener funcionalidades clave del producto, resolviendo problemas complejos, aplicando patrones de diseño, optimizando procesos y garantizando una experiencia estable, eficiente y alineada a los requerimientos del cliente.",
+    "descripcion": "Trabajará en el ciclo completo de desarrollo de software, desde el análisis hasta el despliegue, aportando soluciones técnicas sólidas, colaborando con el equipo y asegurando entregas confiables alineadas con las necesidades del negocio.",
+    "salario": 2600,
     "data": {
-      "tecnologia": ["React", "JavaScript", "CSS"],
+      "tecnologia": ["Angular", "TypeScript"],
       "modalidad": "Remoto",
       "nivel": "Senior"
     }
@@ -220,22 +238,24 @@
     "titulo": "Systems Analyst",
     "empresa": "TechCompany 19",
     "ubicacion": "Híbrido",
-    "descripcion": "Participará activamente en el diseño e implementación de soluciones tecnológicas, trabajando con arquitecturas modernas, asegurando calidad del código, rendimiento óptimo, correcta documentación y colaboración constante con diseñadores, testers y líderes técnicos.",
+    "descripcion": "Participará activamente en el diseño e implementación de soluciones tecnológicas modernas, trabajando con arquitecturas escalables, asegurando calidad del código, rendimiento óptimo, documentación clara y colaboración constante con diseñadores, testers y líderes técnicos del proyecto.",
+    "salario": 2200,
     "data": {
-      "tecnologia": ["React", "JavaScript", "CSS"],
-      "modalidad": "Remoto",
-      "nivel": "Semi Senior"
+      "tecnologia": ["HTML", "CSS", "JavaScript", "React"],
+      "modalidad": "Híbrido",
+      "nivel": "Senior"
     }
   },
   {
     "id": 20,
     "titulo": "Android Developer",
     "empresa": "TechCompany 20",
-    "ubicacion": "Presencial",
-    "descripcion": "Desarrollará soluciones de software enfocadas en escalabilidad y rendimiento, colaborando en decisiones técnicas, integraciones con terceros, mejoras continuas y asegurando estándares de calidad, seguridad y mantenibilidad del sistema.",
+    "ubicacion": "Híbrido",
+    "descripcion": "Responsable del desarrollo, mantenimiento y optimización de aplicaciones de software, colaborando con equipos multidisciplinarios, aplicando buenas prácticas de código, participando en revisiones técnicas y asegurando soluciones escalables, seguras y alineadas con los objetivos estratégicos del negocio.",
+    "salario": 2200,
     "data": {
-      "tecnologia": ["Java", "Spring Boot"],
-      "modalidad": "Híbrido",
+      "tecnologia": ["PHP", "Laravel"],
+      "modalidad": "Remoto",
       "nivel": "Junior"
     }
   },
@@ -243,11 +263,12 @@
     "id": 21,
     "titulo": "iOS Developer",
     "empresa": "TechCompany 21",
-    "ubicacion": "Remoto",
-    "descripcion": "Encargado de construir y mantener funcionalidades clave del producto, resolviendo problemas complejos, aplicando patrones de diseño, optimizando procesos y garantizando una experiencia estable, eficiente y alineada a los requerimientos del cliente.",
+    "ubicacion": "Presencial",
+    "descripcion": "Desarrollará soluciones de software enfocadas en escalabilidad y rendimiento, colaborando en decisiones técnicas, integraciones con servicios externos, mejoras continuas y asegurando altos estándares de calidad, seguridad y mantenibilidad del sistema.",
+    "salario": 1200,
     "data": {
-      "tecnologia": ["Python", "Django", "PostgreSQL"],
-      "modalidad": "Remoto",
+      "tecnologia": ["HTML", "CSS", "JavaScript", "React"],
+      "modalidad": "Híbrido",
       "nivel": "Junior"
     }
   },
@@ -256,21 +277,23 @@
     "titulo": "Junior Software Tester",
     "empresa": "TechCompany 22",
     "ubicacion": "Remoto",
-    "descripcion": "Participará activamente en el diseño e implementación de soluciones tecnológicas, trabajando con arquitecturas modernas, asegurando calidad del código, rendimiento óptimo, correcta documentación y colaboración constante con diseñadores, testers y líderes técnicos.",
+    "descripcion": "Participará activamente en el diseño e implementación de soluciones tecnológicas modernas, trabajando con arquitecturas escalables, asegurando calidad del código, rendimiento óptimo, documentación clara y colaboración constante con diseñadores, testers y líderes técnicos del proyecto.",
+    "salario": 2600,
     "data": {
-      "tecnologia": ["React", "JavaScript", "CSS"],
-      "modalidad": "Presencial",
-      "nivel": "Junior"
+      "tecnologia": ["PHP", "Laravel"],
+      "modalidad": "Remoto",
+      "nivel": "Semi Senior"
     }
   },
   {
     "id": 23,
     "titulo": "Security Engineer",
     "empresa": "TechCompany 23",
-    "ubicacion": "Remoto",
-    "descripcion": "Desarrollará soluciones de software enfocadas en escalabilidad y rendimiento, colaborando en decisiones técnicas, integraciones con terceros, mejoras continuas y asegurando estándares de calidad, seguridad y mantenibilidad del sistema.",
+    "ubicacion": "Híbrido",
+    "descripcion": "Participará activamente en el diseño e implementación de soluciones tecnológicas modernas, trabajando con arquitecturas escalables, asegurando calidad del código, rendimiento óptimo, documentación clara y colaboración constante con diseñadores, testers y líderes técnicos del proyecto.",
+    "salario": 4000,
     "data": {
-      "tecnologia": ["AWS", "Docker", "Kubernetes"],
+      "tecnologia": ["Angular", "TypeScript"],
       "modalidad": "Híbrido",
       "nivel": "Semi Senior"
     }
@@ -279,36 +302,39 @@
     "id": 24,
     "titulo": "AI Developer",
     "empresa": "TechCompany 24",
-    "ubicacion": "Híbrido",
-    "descripcion": "Desarrollará soluciones de software enfocadas en escalabilidad y rendimiento, colaborando en decisiones técnicas, integraciones con terceros, mejoras continuas y asegurando estándares de calidad, seguridad y mantenibilidad del sistema.",
+    "ubicacion": "Remoto",
+    "descripcion": "Participará activamente en el diseño e implementación de soluciones tecnológicas modernas, trabajando con arquitecturas escalables, asegurando calidad del código, rendimiento óptimo, documentación clara y colaboración constante con diseñadores, testers y líderes técnicos del proyecto.",
+    "salario": 1200,
     "data": {
-      "tecnologia": ["AWS", "Docker", "Kubernetes"],
-      "modalidad": "Remoto",
-      "nivel": "Senior"
+      "tecnologia": ["Flutter", "Dart"],
+      "modalidad": "Presencial",
+      "nivel": "Junior"
     }
   },
   {
     "id": 25,
     "titulo": "UI Developer",
     "empresa": "TechCompany 25",
-    "ubicacion": "Híbrido",
-    "descripcion": "Encargado de construir y mantener funcionalidades clave del producto, resolviendo problemas complejos, aplicando patrones de diseño, optimizando procesos y garantizando una experiencia estable, eficiente y alineada a los requerimientos del cliente.",
+    "ubicacion": "Presencial",
+    "descripcion": "Responsable del desarrollo, mantenimiento y optimización de aplicaciones de software, colaborando con equipos multidisciplinarios, aplicando buenas prácticas de código, participando en revisiones técnicas y asegurando soluciones escalables, seguras y alineadas con los objetivos estratégicos del negocio.",
+    "salario": 2200,
     "data": {
-      "tecnologia": ["Java", "Spring Boot"],
-      "modalidad": "Remoto",
-      "nivel": "Junior"
+      "tecnologia": ["PHP", "Laravel"],
+      "modalidad": "Presencial",
+      "nivel": "Semi Senior"
     }
   },
   {
     "id": 26,
     "titulo": "PHP Backend Developer",
     "empresa": "TechCompany 26",
-    "ubicacion": "Presencial",
-    "descripcion": "Trabajará en el ciclo completo de desarrollo de software, desde el análisis hasta el despliegue, aportando soluciones técnicas sólidas, colaborando con el equipo y asegurando entregas confiables y alineadas con las necesidades del negocio.",
+    "ubicacion": "Híbrido",
+    "descripcion": "Responsable del desarrollo, mantenimiento y optimización de aplicaciones de software, colaborando con equipos multidisciplinarios, aplicando buenas prácticas de código, participando en revisiones técnicas y asegurando soluciones escalables, seguras y alineadas con los objetivos estratégicos del negocio.",
+    "salario": 1200,
     "data": {
       "tecnologia": ["Java", "Spring Boot"],
       "modalidad": "Presencial",
-      "nivel": "Senior"
+      "nivel": "Semi Senior"
     }
   },
   {
@@ -316,21 +342,23 @@
     "titulo": "Blockchain Developer",
     "empresa": "TechCompany 27",
     "ubicacion": "Remoto",
-    "descripcion": "Participará activamente en el diseño e implementación de soluciones tecnológicas, trabajando con arquitecturas modernas, asegurando calidad del código, rendimiento óptimo, correcta documentación y colaboración constante con diseñadores, testers y líderes técnicos.",
+    "descripcion": "Trabajará en el ciclo completo de desarrollo de software, desde el análisis hasta el despliegue, aportando soluciones técnicas sólidas, colaborando con el equipo y asegurando entregas confiables alineadas con las necesidades del negocio.",
+    "salario": 1200,
     "data": {
-      "tecnologia": ["Python", "Django", "PostgreSQL"],
-      "modalidad": "Presencial",
-      "nivel": "Junior"
+      "tecnologia": ["PHP", "Laravel"],
+      "modalidad": "Híbrido",
+      "nivel": "Semi Senior"
     }
   },
   {
     "id": 28,
     "titulo": "Technical Support Engineer",
     "empresa": "TechCompany 28",
-    "ubicacion": "Remoto",
-    "descripcion": "Desarrollará soluciones de software enfocadas en escalabilidad y rendimiento, colaborando en decisiones técnicas, integraciones con terceros, mejoras continuas y asegurando estándares de calidad, seguridad y mantenibilidad del sistema.",
+    "ubicacion": "Híbrido",
+    "descripcion": "Participará activamente en el diseño e implementación de soluciones tecnológicas modernas, trabajando con arquitecturas escalables, asegurando calidad del código, rendimiento óptimo, documentación clara y colaboración constante con diseñadores, testers y líderes técnicos del proyecto.",
+    "salario": 3000,
     "data": {
-      "tecnologia": ["Python", "Django", "PostgreSQL"],
+      "tecnologia": ["Angular", "TypeScript"],
       "modalidad": "Presencial",
       "nivel": "Junior"
     }
@@ -340,10 +368,11 @@
     "titulo": "Site Reliability Engineer",
     "empresa": "TechCompany 29",
     "ubicacion": "Presencial",
-    "descripcion": "Trabajará en el ciclo completo de desarrollo de software, desde el análisis hasta el despliegue, aportando soluciones técnicas sólidas, colaborando con el equipo y asegurando entregas confiables y alineadas con las necesidades del negocio.",
+    "descripcion": "Participará activamente en el diseño e implementación de soluciones tecnológicas modernas, trabajando con arquitecturas escalables, asegurando calidad del código, rendimiento óptimo, documentación clara y colaboración constante con diseñadores, testers y líderes técnicos del proyecto.",
+    "salario": 2200,
     "data": {
-      "tecnologia": ["AWS", "Docker", "Kubernetes"],
-      "modalidad": "Remoto",
+      "tecnologia": ["Angular", "TypeScript"],
+      "modalidad": "Híbrido",
       "nivel": "Senior"
     }
   },
@@ -351,11 +380,12 @@
     "id": 30,
     "titulo": "Software Architect",
     "empresa": "TechCompany 30",
-    "ubicacion": "Remoto",
-    "descripcion": "Responsable del desarrollo, mantenimiento y optimización de aplicaciones de software, colaborando con equipos multidisciplinarios, aplicando buenas prácticas de código, participando en revisiones técnicas y asegurando soluciones escalables, seguras y alineadas con los objetivos del negocio.",
+    "ubicacion": "Presencial",
+    "descripcion": "Responsable del desarrollo, mantenimiento y optimización de aplicaciones de software, colaborando con equipos multidisciplinarios, aplicando buenas prácticas de código, participando en revisiones técnicas y asegurando soluciones escalables, seguras y alineadas con los objetivos estratégicos del negocio.",
+    "salario": 3000,
     "data": {
-      "tecnologia": ["Python", "Django", "PostgreSQL"],
-      "modalidad": "Híbrido",
+      "tecnologia": ["Node.js", "Express", "MongoDB"],
+      "modalidad": "Presencial",
       "nivel": "Senior"
     }
   }
