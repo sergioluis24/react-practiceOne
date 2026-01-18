@@ -13,6 +13,7 @@ export function SearchPage() {
     experienceLevel: "",
     salary: 0,
   });
+  const [isSearch, setIsSearch] = useState(false);
   const RESULTS_PER_PAGE = 5;
   const MINSALARY = filtersSelect.salary ? filtersSelect.salary : 0;
   const jobsFilteredBySelect = jobs.filter(
@@ -24,20 +25,20 @@ export function SearchPage() {
       (filtersSelect.experienceLevel === "" ||
         job.data.nivel.toLowerCase() ===
           filtersSelect.experienceLevel.toLowerCase()) &&
-      job.salario >= MINSALARY
+      job.salario >= MINSALARY,
   );
 
   const jobsFilteredByText =
     textSearch !== ""
       ? jobsFilteredBySelect.filter((job) =>
-          job.titulo.toLowerCase().includes(textSearch.toLowerCase())
+          job.titulo.toLowerCase().includes(textSearch.toLowerCase()),
         )
       : jobsFilteredBySelect;
 
   const totalPages = Math.ceil(jobsFilteredByText.length / RESULTS_PER_PAGE);
   const jobsRecorted = jobsFilteredByText.slice(
     (currentPage - 1) * RESULTS_PER_PAGE,
-    currentPage * RESULTS_PER_PAGE
+    currentPage * RESULTS_PER_PAGE,
   );
 
   function handlePageChange(page) {
@@ -46,10 +47,21 @@ export function SearchPage() {
   function handleChangeSearch(text) {
     setTextSearch(text);
     setCurrentPage(1);
+    setIsSearch(true);
   }
   function handleChangeSelect(formData) {
     setFilterSelect(formData);
     setCurrentPage(1);
+    setIsSearch(true);
+  }
+  function handleReset() {
+    setFilterSelect({
+      tecnology: "",
+      location: "",
+      experienceLevel: "",
+      salary: 0,
+    });
+    setIsSearch(false);
   }
   return (
     <>
@@ -58,6 +70,8 @@ export function SearchPage() {
         <Search
           onSearch={handleChangeSearch}
           onChangeSelect={handleChangeSelect}
+          onReset={handleReset}
+          onChangeResults={{ isSearch, total: jobsFilteredByText.length }}
         />
         <JobListings jobs={jobsRecorted} />
         <Pagination
