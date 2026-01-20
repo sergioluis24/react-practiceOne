@@ -29,7 +29,7 @@ export function Search({ onSearch, onChangeSelect, onReset, onChangeResults }) {
       <form className="mb-6" onSubmit={handleChangeSelect}>
         <section className="flex relative h-11 mb-3">
           <input
-            className={`bg-[#353c4a] text-[#f2f4f3] block w-full h-full py-2 px-3 border-0 rounded-md transition-all ${focusedField === "title" ? focusFieldClass : ""}`}
+            className={`bg-[#353c4a] text-[#f2f4f3] block w-full h-full py-2 px-3 border-0 rounded-md transition-all  ${focusedField === "title" ? focusFieldClass : ""}`}
             type="text"
             name={searchId}
             id={searchId}
@@ -40,13 +40,13 @@ export function Search({ onSearch, onChangeSelect, onReset, onChangeResults }) {
           />
           <button
             type="submit"
-            className=" absolute top-[5%] right-40 bg-[#0466c8] text-[#f2f4f3] h-9/10 px-6 rounded-md cursor-pointer"
+            className=" absolute top-[5%] right-40 bg-[#0466c8] text-[#f2f4f3] h-9/10 px-6 rounded-md cursor-pointer sm:right-36 sm:px-2"
           >
             Aplicar filtros
           </button>
           <button
             type="reset"
-            className="absolute top-[5%] right-1 bg-[#5d6471] text-[#f2f4f3] h-9/10 px-6 rounded-md cursor-pointer"
+            className="absolute top-[5%] right-1 bg-[#5d6471] text-[#f2f4f3] h-9/10 px-6 sm:px-4 rounded-md cursor-pointer"
             onClick={onReset}
           >
             Limpiar filtros
