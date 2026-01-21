@@ -13,6 +13,11 @@ export function SearchPage() {
     experienceLevel: "",
     salary: 0,
   });
+  // useEffect(() => {
+  //   if (textSearch !== "" || filtersSelect) {
+  //     document.title = `Pagina numero ${currentPage}`;
+  //   } else document.title = `Buscando empleo`;
+  // }, [textSearch, filtersSelect, currentPage]);
   const [isSearch, setIsSearch] = useState(false);
   const RESULTS_PER_PAGE = 5;
   const MINSALARY = filtersSelect.salary ? filtersSelect.salary : 0;

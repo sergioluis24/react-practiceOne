@@ -1,21 +1,22 @@
 import logo from "./../assets/SmallSquareLogoJpg.jpg";
+import { Link } from "./Link";
 export function Header() {
   return (
     <>
       <header className="navbar w-full py-8">
         <nav className="container flex mx-auto justify-between items-center">
           <div className="w-12 h-12">
-            <a href="/">
+            <Link href="/">
               <img
                 src={logo}
                 alt="Logo Debjobs"
                 className="w-full h-auto rounded-full"
               />
-            </a>
+            </Link>
           </div>
-          <a href="/search" className="cursor-pointer">
+          <Link href="/search" className="cursor-pointer">
             Publicar un empleo
-          </a>
+          </Link>
         </nav>
       </header>
     </>
