@@ -8,7 +8,12 @@ export function Link({ href, children, ...restOfTheProps }) {
     navigateTo(href);
   }
   return (
-    <a href={href} onClick={handleClick} {...restOfTheProps}>
+    <a
+      href={href}
+      className="cursor-pointer"
+      onClick={handleClick}
+      {...restOfTheProps}
+    >
       {children}
     </a>
   );

@@ -15,43 +15,23 @@ export function Home() {
   };
   return (
     <>
-      <main className="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white min-h-screen">
-        <nav className="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
-          <div className="flex items-center px-4 py-3 justify-between">
-            <div className="flex items-center gap-2">
-              <div className="bg-primary size-8 rounded-lg flex items-center justify-center">
-                <span className="material-symbols-outlined text-white text-xl">
-                  work
-                </span>
-              </div>
-              <h2 className="text-xl font-black leading-tight tracking-tight">
-                CareerFind
-              </h2>
-            </div>
-            <div className="flex items-center gap-1">
-              <button className="flex size-10 items-center justify-center rounded-lg hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
-                <span className="material-symbols-outlined">menu</span>
-              </button>
-            </div>
-          </div>
-        </nav>
-
+      <main className=" bg-background-light dark:bg-background-dark text-slate-900 dark:text-white min-h-[90vh]">
         {/* HERO */}
-        <section className="px-4 pt-10 pb-6 text-center">
+        <section className="pt-10 pb-6">
           <div className="flex flex-col gap-4">
-            <h1 className="text-4xl font-black leading-tight tracking-tight">
+            <h1 className="text-4xl text-yellow-200/90 dark:text-yellow-200/90 font-black leading-tight tracking-tight text-balance">
               Encuentra el trabajo de tus sueños hoy
             </h1>
-            <p className="text-slate-500 dark:text-slate-400 text-base max-w-xs mx-auto">
-              Descubre más de 5,000 oportunidades con postulaciones en un solo
-              toque y coincidencias impulsadas por IA.
+            <p className=" text-pretty  text-left max-w-3xl text-red-100/90 mb-6">
+              Descubre más de 20 oportunidades con postulaciones en un solo
+              toque..
             </p>
           </div>
         </section>
 
         {/* SEARCH */}
-        <form className="px-4 mb-10" onSubmit={handleSubmit}>
-          <div className="flex flex-col gap-3 bg-white dark:bg-[#1c2126] p-3 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-2xl shadow-primary/10">
+        <form className="" onSubmit={handleSubmit}>
+          <div className="flex flex-col gap-3 bg-white dark:bg-[#1c2126] p-3 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-slate-50/5 shadow-md">
             <div className="relative flex items-center">
               <div className="absolute left-4 text-slate-400">
                 <span className="material-symbols-outlined">search</span>
@@ -86,90 +66,97 @@ export function Home() {
               </select>
             </div>
 
-            <button className="w-full h-14 bg-primary text-white font-bold rounded-xl shadow-lg shadow-primary/20 flex items-center justify-center gap-2 active:scale-[0.98] transition-transform cursor-pointer">
+            <button className="w-full h-14 bg-[#0466c8] text-white font-bold rounded-xl shadow-lg shadow-primary/20 flex items-center justify-center gap-2 hover:scale-[101%] transition-transform cursor-pointer">
               <span>Buscar oportunidades</span>
               <span className="material-symbols-outlined">arrow_forward</span>
             </button>
           </div>
         </form>
-
-        {/* TRUST */}
-        <section className="py-8 border-y border-slate-200 dark:border-slate-800 bg-white/30 dark:bg-white/5">
-          <p className="text-center text-xs font-bold uppercase tracking-widest text-slate-400 mb-6 px-4">
-            Con la confianza de líderes de la industria
-          </p>
-        </section>
-
-        {/* CATEGORIES */}
-        <section className="py-10">
-          <h3 className="text-xl font-bold px-4 mb-6">Categorías populares</h3>
-
-          <div className="flex overflow-x-auto hide-scrollbar px-4 gap-4">
-            <div className="flex flex-col items-center gap-3 min-w-[110px] p-4 bg-white dark:bg-[#1c2126] rounded-2xl border border-slate-100 dark:border-slate-800">
-              <span className="text-sm font-semibold">Tecnología</span>
-            </div>
-
-            <div className="flex flex-col items-center gap-3 min-w-[110px] p-4 bg-white dark:bg-[#1c2126] rounded-2xl border border-slate-100 dark:border-slate-800">
-              <span className="text-sm font-semibold">Diseño</span>
-            </div>
-
-            <div className="flex flex-col items-center gap-3 min-w-[110px] p-4 bg-white dark:bg-[#1c2126] rounded-2xl border border-slate-100 dark:border-slate-800">
-              <span className="text-sm font-semibold">Marketing</span>
-            </div>
-
-            <div className="flex flex-col items-center gap-3 min-w-[110px] p-4 bg-white dark:bg-[#1c2126] rounded-2xl border border-slate-100 dark:border-slate-800">
-              <span className="text-sm font-semibold">Finanzas</span>
-            </div>
-          </div>
-        </section>
-
-        {/* FEATURED JOBS */}
-        <section className="py-6 bg-slate-100/50 dark:bg-slate-900/30">
-          <div className="flex items-center justify-between px-4 mb-6">
-            <h3 className="text-xl font-bold">Empleos destacados</h3>
-            <button className="text-primary text-sm font-bold flex items-center gap-1">
-              Ver todos
-              <span className="material-symbols-outlined text-sm">
-                open_in_new
-              </span>
-            </button>
-          </div>
-        </section>
-
-        {/* SUCCESS STORIES */}
-        <section className="py-12 px-4">
-          <h3 className="text-xl font-bold mb-8 text-center">
-            Historias de éxito
-          </h3>
-        </section>
-
-        {/* HOW IT WORKS */}
-        <section className="py-12 px-4 bg-white dark:bg-[#1c2126] border-y border-slate-200 dark:border-slate-800">
-          <h3 className="text-xl font-bold mb-10 text-center">
-            Cómo funciona CareerFind
-          </h3>
-        </section>
-
-        {/* CTA */}
-        <section className="py-16 px-4">
-          <div className="bg-gradient-to-br from-primary to-blue-700 rounded-[2.5rem] p-8 text-center text-white relative overflow-hidden">
-            <h3 className="text-3xl font-black leading-tight">
-              Busca empleo desde cualquier lugar
-            </h3>
-            <p className="text-blue-50 text-base leading-relaxed">
-              Recibe notificaciones instantáneas y gestiona tus postulaciones
-              desde donde estés.
-            </p>
-          </div>
-        </section>
-
-        {/* FOOTER */}
-        <footer className="py-12 px-4 border-t border-slate-200 dark:border-slate-800 text-center">
-          <p className="text-slate-400 text-xs">
-            © 2025 DevJobs Inc. Todos los derechos reservados.
-          </p>
-        </footer>
       </main>
+
+      {/* TRUST */}
+      <section className="mr-[-30%]  rounded-l-2xl py-14 pr-28 pl-10 border-y border-slate-200 dark:border-slate-800 bg-white/30 dark:bg-white/5 shadow-2xs shadow-slate-50/5">
+        <div className="text-right text-pretty w-3/4 ml-auto">
+          <h4 className="text-balance font-bold uppercase tracking-widest text-yellow-200/90 mb-6 px-4">
+            El talento tecnológico no espera oportunidades, las crea.
+          </h4>
+          <p className="text-slate-200/80  text-pretty">
+            Aquí conectamos tus habilidades con empresas que piensan en grande,
+            innovan rápido y apuestan al futuro. Menos ruido, más impacto. Tu
+            próximo desafío empieza ahora.
+          </p>
+        </div>
+      </section>
+
+      {/* CATEGORIES */}
+      <section className="py-10  mt-20">
+        <h3 className="text-xl font-bold px-4 mb-6">Tecnologias populares</h3>
+
+        <div className="flex overflow-x-auto hide-scrollbar px-4 gap-4">
+          <div className="flex flex-col items-center gap-3 min-w-[110px] p-4 bg-white dark:bg-[#1c2126] rounded-2xl border border-slate-100 dark:border-slate-800">
+            <span className="text-sm font-semibold">JavaScript</span>
+          </div>
+
+          <div className="flex flex-col items-center gap-3 min-w-[110px] p-4 bg-white dark:bg-[#1c2126] rounded-2xl border border-slate-100 dark:border-slate-800">
+            <span className="text-sm font-semibold">React</span>
+          </div>
+
+          <div className="flex flex-col items-center gap-3 min-w-[110px] p-4 bg-white dark:bg-[#1c2126] rounded-2xl border border-slate-100 dark:border-slate-800">
+            <span className="text-sm font-semibold">Java</span>
+          </div>
+
+          <div className="flex flex-col items-center gap-3 min-w-[110px] p-4 bg-white dark:bg-[#1c2126] rounded-2xl border border-slate-100 dark:border-slate-800">
+            <span className="text-sm font-semibold">Python</span>
+          </div>
+        </div>
+      </section>
+
+      {/* FEATURED JOBS */}
+      <section className="py-6 bg-slate-100/50 dark:bg-slate-900/30">
+        <div className="flex items-center justify-between px-4 mb-6">
+          <h3 className="text-xl font-bold">Empleos destacados</h3>
+          <button className="text-primary text-sm font-bold flex items-center gap-1">
+            Ver todos
+            <span className="material-symbols-outlined text-sm">
+              open_in_new
+            </span>
+          </button>
+        </div>
+      </section>
+
+      {/* SUCCESS STORIES */}
+      <section className="py-12 px-4">
+        <h3 className="text-xl font-bold mb-8 text-center">
+          Historias de éxito
+        </h3>
+      </section>
+
+      {/* HOW IT WORKS */}
+      <section className="py-12 px-4 bg-white dark:bg-[#1c2126] border-y border-slate-200 dark:border-slate-800">
+        <h3 className="text-xl font-bold mb-10 text-center">
+          Cómo funciona CareerFind
+        </h3>
+      </section>
+
+      {/* CTA */}
+      <section className="py-16 px-4">
+        <div className="bg-gradient-to-br from-primary to-blue-700 rounded-[2.5rem] p-8 text-center text-white relative overflow-hidden">
+          <h3 className="text-3xl font-black leading-tight">
+            Busca empleo desde cualquier lugar
+          </h3>
+          <p className="text-blue-50 text-base leading-relaxed">
+            Recibe notificaciones instantáneas y gestiona tus postulaciones
+            desde donde estés.
+          </p>
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="py-12 px-4 border-t border-slate-200 dark:border-slate-800 text-center">
+        <p className="text-slate-400 text-xs">
+          © 2025 DevJobs Inc. Todos los derechos reservados.
+        </p>
+      </footer>
     </>
   );
 }

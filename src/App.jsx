@@ -6,13 +6,17 @@ import { Footer } from "./components/Footer.jsx";
 import { Home } from "./pages/Home.jsx";
 import { SearchPage } from "./pages/SearchPage.jsx";
 import { Routing } from "./components/Routing.jsx";
+import { Contact } from "./pages/Contact.jsx";
 function App() {
   return (
     <>
       <Background>
         <Header />
-        <Routing path="/" component={Home} />
-        <Routing path="/search" component={SearchPage} />
+        <div className="relative  md:max-w-8/12 md:mx-auto">
+          <Routing path="/" component={Home} />
+          <Routing path="/search" component={SearchPage} />
+          <Routing path="/contact" component={Contact} />
+        </div>
         <Footer />
       </Background>
     </>

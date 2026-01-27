@@ -70,7 +70,7 @@ export function SearchPage() {
   }
   return (
     <>
-      <main className="grow shrink w-[80%] mx-auto">
+      <main className="grow shrink">
         <h1 className="mb-6 text-2xl  ">Plataforma de empleos</h1>
         <Search
           onSearch={handleChangeSearch}
