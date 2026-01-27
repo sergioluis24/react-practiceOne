@@ -1,12 +1,14 @@
 import { useId } from "react";
 import { useState } from "react";
-export function Search({ onSearch, onChangeSelect, onReset, onChangeResults }) {
-  const searchId = useId(),
-    tecnologyId = useId(),
-    locationId = useId(),
-    experienceLevelId = useId(),
-    salayId = useId();
 
+function useSearch(
+  onSearch,
+  onChangeSelect,
+  tecnologyId,
+  locationId,
+  experienceLevelId,
+  salayId,
+) {
   const [focusedField, setfocusedField] = useState(null);
   const focusFieldClass = "border-[#4f46e5] outline-[#4f46e5]";
   function handleChangeSearch(event) {
@@ -23,6 +25,36 @@ export function Search({ onSearch, onChangeSelect, onReset, onChangeResults }) {
     };
     onChangeSelect(filters);
   }
+
+  return {
+    handleChangeSelect,
+    handleChangeSearch,
+    focusFieldClass,
+    focusedField,
+    setfocusedField,
+  };
+}
+
+export function Search({ onSearch, onChangeSelect, onReset, onChangeResults }) {
+  const searchId = useId(),
+    tecnologyId = useId(),
+    locationId = useId(),
+    experienceLevelId = useId(),
+    salayId = useId();
+  const {
+    handleChangeSelect,
+    handleChangeSearch,
+    focusFieldClass,
+    focusedField,
+    setfocusedField,
+  } = useSearch(
+    onSearch,
+    onChangeSelect,
+    tecnologyId,
+    locationId,
+    experienceLevelId,
+    salayId,
+  );
 
   return (
     <>
@@ -99,7 +131,7 @@ export function Search({ onSearch, onChangeSelect, onReset, onChangeResults }) {
             <option value="Senior">Senior</option>
           </select>
           <input
-            placeholder="30000"
+            placeholder="1000"
             type="number"
             name={salayId}
             id={salayId}
