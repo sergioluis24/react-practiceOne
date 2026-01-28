@@ -12,11 +12,14 @@ function App() {
     <>
       <Background>
         <Header />
-        <div className="relative  md:max-w-8/12 md:mx-auto">
-          <Routing path="/" component={Home} />
-          <Routing path="/search" component={SearchPage} />
-          <Routing path="/contact" component={Contact} />
+        <div>
+          <div className="md:max-w-[920px] md:mx-auto">
+            <Routing path="/" component={Home} />
+            <Routing path="/search" component={SearchPage} />
+            <Routing path="/contact" component={Contact} />
+          </div>
         </div>
+
         <Footer />
       </Background>
     </>

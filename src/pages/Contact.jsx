@@ -1,7 +1,7 @@
 export function Contact() {
   return (
     <>
-      <main class="max-w-md mx-auto pb-12">
+      <main class="mx-auto pb-12">
         {/* <!-- HeadlineText --> */}
         <div class="px-4 pt-8 pb-2">
           <h1 class="text-slate-900 dark:text-white tracking-tight text-[32px] font-bold leading-tight text-left">

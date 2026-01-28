@@ -15,9 +15,9 @@ export function Home() {
   };
   return (
     <>
-      <main className=" bg-background-light dark:bg-background-dark text-slate-900 dark:text-white min-h-[90vh]">
+      <main className="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white min-h-screen">
         {/* HERO */}
-        <section className="pt-10 pb-6">
+        <section className="pt-30 pb-6">
           <div className="flex flex-col gap-4">
             <h1 className="text-4xl text-yellow-200/90 dark:text-yellow-200/90 font-black leading-tight tracking-tight text-balance">
               Encuentra el trabajo de tus sueños hoy
@@ -75,12 +75,12 @@ export function Home() {
       </main>
 
       {/* TRUST */}
-      <section className="mr-[-30%]  rounded-l-2xl py-14 pr-28 pl-10 border-y border-slate-200 dark:border-slate-800 bg-white/30 dark:bg-white/5 shadow-2xs shadow-slate-50/5">
+      <section className="absolute right-0  rounded-l-2xl py-24 pr-28 pl-10 border-y border-slate-200 dark:border-slate-800 bg-[#f6fff8]/10 dark:bg-[#f6fff8]/10 shadow-2xs shadow-slate-50/5">
         <div className="text-right text-pretty w-3/4 ml-auto">
           <h4 className="text-balance font-bold uppercase tracking-widest text-yellow-200/90 mb-6 px-4">
             El talento tecnológico no espera oportunidades, las crea.
           </h4>
-          <p className="text-slate-200/80  text-pretty">
+          <p className="text-slate-200/70 font-medium text-pretty">
             Aquí conectamos tus habilidades con empresas que piensan en grande,
             innovan rápido y apuestan al futuro. Menos ruido, más impacto. Tu
             próximo desafío empieza ahora.
@@ -89,7 +89,7 @@ export function Home() {
       </section>
 
       {/* CATEGORIES */}
-      <section className="py-10  mt-20">
+      <section className="py-10  mt-100">
         <h3 className="text-xl font-bold px-4 mb-6">Tecnologias populares</h3>
 
         <div className="flex overflow-x-auto hide-scrollbar px-4 gap-4">
@@ -150,13 +150,6 @@ export function Home() {
           </p>
         </div>
       </section>
-
-      {/* FOOTER */}
-      <footer className="py-12 px-4 border-t border-slate-200 dark:border-slate-800 text-center">
-        <p className="text-slate-400 text-xs">
-          © 2025 DevJobs Inc. Todos los derechos reservados.
-        </p>
-      </footer>
     </>
   );
 }
