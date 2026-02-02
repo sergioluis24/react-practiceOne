@@ -1,0 +1,17 @@
+.sliderWrapper {
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+}
+.sliderWrapper:hover .train {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .sliderWrapper {
+    animation: none;
+  }
+}

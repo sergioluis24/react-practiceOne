@@ -3,7 +3,7 @@ export function JobCard({ job, isLast }) {
     <>
       <article
         className={`flex justify-between items-center  ${
-          !isLast ? "border-b-[.1px] border-gray-50" : ""
+          !isLast ? "border-b-[.1px] border-slate-50/50" : ""
         } px-8 py-12`}
       >
         <div className="w-[%100]">

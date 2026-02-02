@@ -14,9 +14,19 @@ export function Header() {
               />
             </Link>
           </div>
-          <div className="flex gap-4">
-            <Link href="/search">Buscar un empleo</Link>
-            <Link href="/contact">Contacto</Link>
+          <div className="flex gap-6">
+            <Link
+              href="/search"
+              className="hover:text-shadow-sm hover:text-shadow-slate-50/40 transition"
+            >
+              Buscar un empleo
+            </Link>
+            <Link
+              href="/contact"
+              className="hover:text-shadow-sm hover:text-shadow-slate-50/40 transition"
+            >
+              Contacto
+            </Link>
           </div>
         </nav>
       </header>

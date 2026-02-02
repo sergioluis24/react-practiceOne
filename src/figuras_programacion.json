@@ -1,0 +1,24 @@
+{
+  "figuras_clave_programacion": [
+    {
+      "nombre": "Ada Lovelace",
+      "frase": "La imaginación es el motor de la innovación.",
+      "filosofia": "Ada Lovelace entendió la programación antes de que existieran las computadoras modernas. Su visión iba más allá de los números: veía a las máquinas como herramientas creativas capaces de transformar ideas en realidad. Su filosofía se basaba en combinar lógica y creatividad, demostrando que el pensamiento abstracto es tan importante como el cálculo preciso. Sin ella, el software no habría nacido como lo conocemos."
+    },
+    {
+      "nombre": "Alan Turing",
+      "frase": "Pensar es un acto que puede ser modelado.",
+      "filosofia": "Alan Turing sentó las bases de la computación moderna al cuestionar qué significa realmente pensar. Su enfoque fue riguroso, matemático y pragmático: si algo puede definirse con reglas, puede programarse. Creía en simplificar problemas complejos hasta su esencia, una mentalidad que hoy define la creación de algoritmos, sistemas y soluciones escalables."
+    },
+    {
+      "nombre": "Linus Torvalds",
+      "frase": "El buen software nace de la colaboración.",
+      "filosofia": "Linus Torvalds transformó la industria demostrando que el software de clase mundial puede surgir de comunidades abiertas. Su filosofía se basa en la transparencia, la meritocracia técnica y la mejora continua. Para él, el código tiene más valor que los títulos, y compartir conocimiento es clave para innovar de forma sostenible."
+    },
+    {
+      "nombre": "Grace Hopper",
+      "frase": "La tecnología debe servir a las personas, no al revés.",
+      "filosofia": "Grace Hopper fue pionera en hacer la programación más accesible y humana. Impulsó los lenguajes de alto nivel con la convicción de que el software debía adaptarse al pensamiento humano. Su legado vive en cada lenguaje moderno que prioriza claridad, productividad y propósito."
+    }
+  ]
+}

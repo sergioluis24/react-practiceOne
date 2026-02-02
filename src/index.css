@@ -2,13 +2,23 @@
 :root {
   --background: #06182a;
 }
+/* KeyFrames */
+@keyframes animateLoopTrain {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
 body {
   color: #fff;
   /* background-color: red;  */
 }
-.navbar {
-}
 .pagination.is-active {
   background-color: #fff;
   color: rgb(21, 21, 21);
+}
+.animate-loop-train {
+  animation: animateLoopTrain 25s linear infinite;
 }
