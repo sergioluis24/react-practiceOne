@@ -1,10 +1,20 @@
+import { useState } from "react";
+
 export function Contact() {
+  const [isValid, setIsValid] = useState(true);
+  const handleValidationName = (event) => {
+    let input = event.target.value;
+    const nameRegex = /^[A-Za-zÁÉÍÓÚáéíóúÑñÜü]+(?:\s[A-Za-zÁÉÍÓÚáéíóúÑñÜü]+)*$/;
+    if (!nameRegex.test(input)) {
+      setIsValid(false);
+    }
+  };
   return (
     <>
       <main class="mx-auto pb-12">
         {/* <!-- HeadlineText --> */}
         <div class="px-4 pt-8 pb-2">
-          <h1 class="text-slate-900 dark:text-white tracking-tight text-[32px] font-bold leading-tight text-left">
+          <h1 class="text-yellow-200/90  tracking-tight text-[32px] font-bold leading-tight text-left">
             Ponte en Contacto
           </h1>
           <p class="text-slate-500 dark:text-slate-400 mt-2 text-base">
@@ -21,10 +31,16 @@ export function Contact() {
                 Nombre Completo
               </p>
               <input
-                class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-slate-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-slate-300 dark:border-[#3c4753] bg-white dark:bg-[#1c2126] focus:border-primary h-14 placeholder:text-slate-400 dark:placeholder:text-[#9dabb8] p-[15px] text-base font-normal leading-normal transition-all"
+                class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-slate-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-slate-300 dark:border-[#3c4753] bg-white dark:bg-[#1c2126] focus:border-primary h-14 placeholder:text-slate-400 dark:placeholder:text-[#9dabb8] p-3.75 text-base font-normal leading-normal transition-all"
                 placeholder="Ingresa tu nombre"
                 type="text"
+                maxLength={20}
+                onChange={handleValidationName}
               />
+              <span className={`${isValid ? "hidden" : ""} text-red-500 mt-4`}>
+                El nombre solo puede contener letras y espacios. No se permiten
+                números ni símbolos.
+              </span>
             </label>
           </div>
           {/* <!-- Email Address --> */}

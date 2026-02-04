@@ -83,7 +83,7 @@ export function Home() {
       </main>
 
       {/* TRUST */}
-      <section className="absolute left-0  w-screen  py-32 pr-28 pl-10 border-y border-slate-200 dark:border-slate-800 bg-[#f6fff8]/10 dark:bg-[#f6fff8]/10 shadow-2xs shadow-slate-50/5 backdrop-blur-2xl">
+      <section className="absolute left-0  w-screen  py-32  pl-10 border-y border-slate-200 dark:border-slate-800 bg-[#f6fff8]/10 dark:bg-[#f6fff8]/10 shadow-2xs shadow-slate-50/5 backdrop-blur-2xl">
         <div className="max-w-[920px] mx-auto">
           <h4 className="text-2xl font-bold text-balance uppercase tracking-widest text-yellow-200/90 mb-6 ">
             El talento tecnológico no espera oportunidades, las crea.
@@ -127,7 +127,7 @@ export function Home() {
       </section>
 
       {/* FEATURED JOBS */}
-      <section className="py-6 bg-slate-100/50 dark:bg-slate-900/30">
+      <section className="py-6 bg-slate-100/50 dark:bg-slate-900/30 mb-10">
         <div className=" flex items-center justify-between px-4 mb-26">
           <h3 className="text-3xl font-bold">Empleos destacados</h3>
           <button className="cursor-pointer text-yellow-300/90 text-md font-bold flex items-center gap-1 hover:text-shadow-sm hover:text-shadow-yellow-300/30 hover:-translate-y-1 transition">
@@ -147,32 +147,12 @@ export function Home() {
       </section>
 
       {/* SUCCESS STORIES */}
-      <section className="py-12 px-4 mt-[600px]">
+      <section className="py-12 px-4 ">
         <h3 className="text-3xl font-bold mb-20">Historias de éxito</h3>
         <div className="grid grid-cols-2 gap-4">
           {figures.figuras_clave_programacion.map((figure, index) => (
             <CardAvatar figure={figure} key={index} />
           ))}
-        </div>
-      </section>
-
-      {/* HOW IT WORKS */}
-      <section className="py-12 px-4 bg-white dark:bg-[#1c2126] border-y border-slate-200 dark:border-slate-800">
-        <h3 className="text-xl font-bold mb-10 text-center">
-          Cómo funciona CareerFind
-        </h3>
-      </section>
-
-      {/* CTA */}
-      <section className="py-16 px-4">
-        <div className="bg-gradient-to-br from-primary to-blue-700 rounded-[2.5rem] p-8 text-center text-white relative overflow-hidden">
-          <h3 className="text-3xl font-black leading-tight">
-            Busca empleo desde cualquier lugar
-          </h3>
-          <p className="text-blue-50 text-base leading-relaxed">
-            Recibe notificaciones instantáneas y gestiona tus postulaciones
-            desde donde estés.
-          </p>
         </div>
       </section>
     </>
