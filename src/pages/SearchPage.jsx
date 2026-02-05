@@ -71,7 +71,9 @@ export function SearchPage() {
   return (
     <>
       <main className="grow shrink">
-        <h1 className="mb-6 text-2xl  ">Plataforma de empleos</h1>
+        <h1 className="mb-6 text-yellow-200/90  tracking-tight text-3xl font-bold leading-tight text-left  ">
+          Plataforma de empleos
+        </h1>
         <Search
           onSearch={handleChangeSearch}
           onChangeSelect={handleChangeSelect}
