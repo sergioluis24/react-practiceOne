@@ -21,7 +21,10 @@ export function Contact() {
     subject: "",
     message: "",
   });
-
+  const [isValidTextArea, setIsValidTextArea] = useState({
+    overflowed: false,
+    charge: true,
+  });
   const handleValidationName = (event) => {
     let input = event.target.value;
     const nameRegex = /^[A-Za-zÁÉÍÓÚáéíóúÑñÜü]+(?:\s[A-Za-zÁÉÍÓÚáéíóúÑñÜü]+)*$/;
@@ -86,10 +89,25 @@ export function Contact() {
       isValidName.empty &&
       isValidEmail.valid &&
       isValidEmail.empty &&
-      !isValidSubject
+      isValidSubject.empty &&
+      isValidTextArea.overflowed
     ) {
       console.log("Se ha enviado el formulario");
     }
+  };
+  const handleTextArea = (event) => {
+    const MAX = 255;
+    if (event.target.value.length >= MAX) {
+      setIsValidTextArea({
+        charge: false,
+      });
+
+      return;
+    } else
+      setIsValidTextArea({
+        overflowed: true,
+        charge: false,
+      });
   };
   return (
     <>
@@ -114,6 +132,7 @@ export function Contact() {
                   Nombre Completo
                 </p>
                 <input
+                  // required
                   className="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-slate-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-slate-300 dark:border-[#3c4753] bg-white dark:bg-[#1c2126] focus:border-primary h-14 placeholder:text-slate-400 dark:placeholder:text-[#9dabb8] p-3.75 text-base font-normal leading-normal transition-all"
                   placeholder="Ingresa tu nombre"
                   type="text"
@@ -140,6 +159,7 @@ export function Contact() {
                   Correo Electrónico
                 </p>
                 <input
+                  // required
                   className="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-slate-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-slate-300 dark:border-[#3c4753] bg-white dark:bg-[#1c2126] focus:border-primary h-14 placeholder:text-slate-400 dark:placeholder:text-[#9dabb8] p-[15px] text-base font-normal leading-normal transition-all"
                   placeholder="ejemplo@correo.com"
                   type="email"
@@ -165,6 +185,7 @@ export function Contact() {
                 </p>
                 <div className="relative">
                   <select
+                    // required
                     className="form-select appearance-none flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-slate-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-slate-300 dark:border-[#3c4753] bg-white dark:bg-[#1c2126] focus:border-primary h-14 placeholder:text-slate-400 dark:placeholder:text-[#9dabb8] p-[15px] text-base font-normal leading-normal transition-all cursor-pointer"
                     onClick={handleSubject}
                   >
@@ -177,12 +198,6 @@ export function Contact() {
                     <option value="feedback">Comentarios</option>
                     <option value="other">Otro</option>
                   </select>
-                  {/* Error */}
-                  {!isValidSubject.empty && !isValidSubject.charge && (
-                    <span className={` text-red-400/90 mt-4`}>
-                      Por favor, ingresa un asunto para tu mensaje.
-                    </span>
-                  )}
                   <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-400 dark:text-slate-500">
                     <span className="material-symbols-outlined">
                       unfold_more
@@ -190,6 +205,12 @@ export function Contact() {
                   </div>
                 </div>
               </label>
+              {/* Error */}
+              {!isValidSubject.empty && !isValidSubject.charge && (
+                <span className={` text-red-400/90 transition`}>
+                  Por favor, ingresa un asunto para tu mensaje.
+                </span>
+              )}
             </div>
             {/* <!-- Message --> */}
             <div className="flex flex-col gap-4 px-4 py-3">
@@ -198,12 +219,19 @@ export function Contact() {
                   Mensaje
                 </p>
                 <textarea
+                  // required
                   className="form-textarea flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-slate-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-slate-300 dark:border-[#3c4753] bg-white dark:bg-[#1c2126] focus:border-primary min-h-[120px] placeholder:text-slate-400 dark:placeholder:text-[#9dabb8] p-[15px] text-base font-normal leading-normal transition-all"
                   placeholder="¿Cómo podemos ayudarte?"
                   rows="4"
                   maxLength={255}
+                  onChange={handleTextArea}
                 ></textarea>
               </label>
+              {!isValidTextArea.overflowed && !isValidTextArea.charge && (
+                <span className={` text-amber-200 `}>
+                  Solo se puede ingresar 255 caracteres en el mensaje
+                </span>
+              )}
             </div>
             {/* <!-- Submit Button --> */}
             <div className="px-4 py-6">
