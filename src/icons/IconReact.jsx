@@ -2,7 +2,7 @@ export function IconReact() {
   return (
     <div className="w-8 h-8 mr-4">
       <svg viewBox="0 0 569 512" xmlns="http://www.w3.org/1999/xlink">
-        <g fill="none" fillrRule="evenodd">
+        <g fill="none" fillRule="evenodd">
           <g
             transform="translate(-227, -256)"
             fill="#58C4DC"

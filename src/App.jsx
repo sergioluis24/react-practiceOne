@@ -7,6 +7,7 @@ import { Home } from "./pages/Home.jsx";
 import { SearchPage } from "./pages/SearchPage.jsx";
 import { Routing } from "./components/Routing.jsx";
 import { Contact } from "./pages/Contact.jsx";
+import { ButtonBack } from "./components/ButtonBack.jsx";
 function App() {
   return (
     <>
@@ -21,6 +22,7 @@ function App() {
         </div>
 
         <Footer />
+        <ButtonBack />
       </Background>
     </>
   );

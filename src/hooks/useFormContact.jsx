@@ -1,6 +1,10 @@
-import { useState } from "react";
-
-export function useFormContact(form) {
+import { useEffect, useId, useState } from "react";
+import emailjs from "@emailjs/browser";
+export function useFormContact() {
+  const nameId = useId();
+  const emailId = useId();
+  const subjectId = useId();
+  const textAreaId = useId();
   const [isValidName, setIsValidName] = useState({
     valid: false,
     empty: false,
@@ -15,25 +19,36 @@ export function useFormContact(form) {
     empty: false,
     charge: true,
   });
-  const [dataForm, setDataForm] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
+  const [dataForm, setDataForm] = useState(null);
   const [isValidTextArea, setIsValidTextArea] = useState({
     overflowed: false,
     charge: true,
   });
-  //   function sendMail() {
-  //     emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
-
-  //     emailjs.sendForm(
-  //       import.meta.env.VITE_EMAILJS_SERVICE_ID,
-  //       import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-  //       form,
-  //     );
-  //   }
+  useEffect(() => {
+    emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+  }, []);
+  useEffect(() => {
+    if (!dataForm) return;
+    emailjs
+      .sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        dataForm,
+      )
+      .then((response) => {
+        console.log("Formulario enviando! ", response);
+      });
+  }, [dataForm]);
+  function sendMail(form) {
+    // const formData = new FormData(form);
+    setDataForm(form);
+    // setDataForm({
+    //   name: formData.get(nameId),
+    //   email: formData.get(emailId),
+    //   subject: formData.get(subjectId),
+    //   message: formData.get(textAreaId),
+    // });
+  }
   const handleValidationName = (event) => {
     let input = event.target.value;
     const nameRegex = /^[A-Za-zÁÉÍÓÚáéíóúÑñÜü]+(?:\s[A-Za-zÁÉÍÓÚáéíóúÑñÜü]+)*$/;
@@ -101,7 +116,7 @@ export function useFormContact(form) {
       isValidSubject.empty &&
       isValidTextArea.overflowed
     ) {
-      console.log("Se ha enviado el formulario");
+      sendMail(event.currentTarget);
     }
   };
   const handleTextArea = (event) => {
@@ -129,6 +144,10 @@ export function useFormContact(form) {
     handleSubject,
     handleTextArea,
     handleSubmit,
-    // sendMail,
+    sendMail,
+    nameId,
+    emailId,
+    subjectId,
+    textAreaId,
   };
 }

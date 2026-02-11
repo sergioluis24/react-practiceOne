@@ -71,7 +71,7 @@ export function SearchPage() {
   return (
     <>
       <main className="grow shrink">
-        <h1 className="mb-6 text-yellow-200/90  tracking-tight text-3xl font-bold leading-tight text-left  ">
+        <h1 className="mb-10 text-yellow-200/90  tracking-tight text-3xl font-bold leading-tight text-left  ">
           Plataforma de empleos
         </h1>
         <Search

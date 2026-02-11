@@ -74,7 +74,7 @@ export function Home() {
               </select>
             </div>
 
-            <button className="w-full h-14 bg-[#0466c8] text-white font-bold rounded-xl shadow-lg shadow-primary/20 flex items-center justify-center gap-2 hover:scale-[101%] transition-transform cursor-pointer">
+            <button className="w-full h-14 bg-[#0466c8] text-white font-bold rounded-xl shadow-lg shadow-primary/20 flex items-center justify-center gap-2 hover:scale-[101%] transition-transform cursor-pointer hover:brightness-105">
               <span>Buscar oportunidades</span>
               <span className="material-symbols-outlined">arrow_forward</span>
             </button>
@@ -140,8 +140,8 @@ export function Home() {
 
         <SliderJobs>
           {/* JOB CARD */}
-          {job.slice(0, 5).map((job) => (
-            <CardHome job={job} />
+          {job.slice(0, 5).map((job, index) => (
+            <CardHome job={job} key={index} />
           ))}
         </SliderJobs>
       </section>

@@ -1,6 +1,9 @@
 export function Background({ children }) {
   return (
-    <div className="min-h-screen w-full bg-[#0f172a] relative flex flex-col overflow-x-hidden">
+    <div
+      id="background"
+      className="min-h-screen w-full bg-[#0f172a] relative flex flex-col overflow-x-hidden"
+    >
       {/* Blue Radial Glow Background */}
       <div
         className="absolute inset-0 z-0 pointer-events-none"
