@@ -21,9 +21,12 @@ export function ButtonBack() {
     <>
       <article
         onClick={handleClick}
-        className="p-2 rounded-full  bg-yellow-200 w-12 h-12 fixed z-50 bottom-10 right-6"
+        className="p-2 rounded-full  bg-yellow-200 w-12 h-12 fixed z-50 bottom-10 right-6 cursor-pointer hover:brightness-105 hover:shadow-md hover:shadow-yellow-200/50 transition"
       >
-        <IconArrowUp className="fill-zinc-950 w-full h-auto pointer-events-none" />
+        <IconArrowUp
+          onClick={handleClick}
+          className="fill-zinc-950 w-full h-auto pointer-events-none"
+        />
       </article>
     </>
   );

@@ -1,16 +1,30 @@
 import { useFormContact } from "../hooks/useFormContact";
+import { Toaster, toast } from "sonner";
 export function Contact() {
   const {
     isValidName,
     isValidEmail,
     isValidSubject,
     isValidTextArea,
+    isError,
+    isSend,
+    setIsError,
+    setIsSend,
     handleValidationName,
     handleValidationEmail,
     handleSubject,
     handleTextArea,
     handleSubmit,
   } = useFormContact();
+
+  if (isSend) {
+    toast.success("Formulario enviado correctamente.");
+    setIsSend(false);
+  }
+  if (isError) {
+    toast.error("Ups.. Ha ocurrido un error en el envio.");
+    setIsError(false);
+  }
   return (
     <>
       <main className=" pb-12">
@@ -152,6 +166,7 @@ export function Contact() {
             </button>
           </form>
         </section>
+        <Toaster richColors />
       </main>
     </>
   );

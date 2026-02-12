@@ -5,6 +5,14 @@ export function useFormContact() {
   const emailId = useId();
   const subjectId = useId();
   const textAreaId = useId();
+  //   const initialForm = {
+  //   name: "",
+  //   email: "",
+  //   message: "",
+  // };
+
+  const [isSend, setIsSend] = useState(false);
+  const [isError, setIsError] = useState(false);
   const [isValidName, setIsValidName] = useState({
     valid: false,
     empty: false,
@@ -28,6 +36,12 @@ export function useFormContact() {
     emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
   }, []);
   useEffect(() => {
+    const handleError = () => {
+      setIsError(true);
+    };
+    const handleSend = () => {
+      setIsSend(true);
+    };
     if (!dataForm) return;
     emailjs
       .sendForm(
@@ -36,19 +50,17 @@ export function useFormContact() {
         dataForm,
       )
       .then((response) => {
+        handleSend();
         console.log("Formulario enviando! ", response);
+      })
+      .catch(() => {
+        handleError();
       });
   }, [dataForm]);
   function sendMail(form) {
-    // const formData = new FormData(form);
     setDataForm(form);
-    // setDataForm({
-    //   name: formData.get(nameId),
-    //   email: formData.get(emailId),
-    //   subject: formData.get(subjectId),
-    //   message: formData.get(textAreaId),
-    // });
   }
+
   const handleValidationName = (event) => {
     let input = event.target.value;
     const nameRegex = /^[A-Za-zÁÉÍÓÚáéíóúÑñÜü]+(?:\s[A-Za-zÁÉÍÓÚáéíóúÑñÜü]+)*$/;
@@ -139,6 +151,8 @@ export function useFormContact() {
     isValidEmail,
     isValidSubject,
     isValidTextArea,
+    isError,
+    isSend,
     handleValidationName,
     handleValidationEmail,
     handleSubject,
@@ -149,5 +163,7 @@ export function useFormContact() {
     emailId,
     subjectId,
     textAreaId,
+    setIsError,
+    setIsSend,
   };
 }
