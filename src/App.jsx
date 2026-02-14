@@ -13,8 +13,8 @@ function App() {
     <>
       <Background>
         <Header />
-        <div>
-          <div className="md:max-w-[920px] md:mx-auto">
+        <div className="shrink grow">
+          <div className="md:max-w-[920px] md:mx-auto ">
             <Routing path="/" component={Home} />
             <Routing path="/search" component={SearchPage} />
             <Routing path="/contact" component={Contact} />

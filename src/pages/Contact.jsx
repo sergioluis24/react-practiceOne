@@ -25,6 +25,7 @@ export function Contact() {
     toast.error("Ups.. Ha ocurrido un error en el envio.");
     setIsError(false);
   }
+
   return (
     <>
       <main className=" pb-12">
