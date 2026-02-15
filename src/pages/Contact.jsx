@@ -12,14 +12,19 @@ export function Contact() {
     setIsSend,
     handleValidationName,
     handleValidationEmail,
+    // handleChangeField,
     handleSubject,
     handleTextArea,
     handleSubmit,
+    fields,
+    setFields,
+    fieldsInitial,
   } = useFormContact();
 
   if (isSend) {
     toast.success("Formulario enviado correctamente.");
     setIsSend(false);
+    setFields(fieldsInitial);
   }
   if (isError) {
     toast.error("Ups.. Ha ocurrido un error en el envio.");
@@ -56,6 +61,8 @@ export function Contact() {
                   maxLength={20}
                   onChange={handleValidationName}
                   name="name"
+                  value={fields.name}
+                  data-name="name"
                 />
                 {!isValidName.valid && !isValidName.charge && (
                   <span className={` text-red-400/90 mt-4`}>
@@ -83,6 +90,8 @@ export function Contact() {
                   type="email"
                   onChange={handleValidationEmail}
                   name="email"
+                  value={fields.email}
+                  data-name="email"
                 />
                 {!isValidEmail.valid && !isValidEmail.charge && (
                   <span className={` text-red-400/90 mt-4`}>
@@ -107,7 +116,10 @@ export function Contact() {
                     // required
                     name="subject"
                     className="form-select appearance-none flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl  focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-slate-300 dark:border-[#3c4753]  focus:border-primary h-14 text-slate-900 dark:text-[#f2f4f3ba] placeholder:text-[#f2f4f3] dark:placeholder:text-[#f2f4f37d] bg-[#353c4a] backdrop-blur-sm p-3.75 text-base font-normal leading-normal transition-all cursor-pointer"
+                    value={fields.subject}
+                    onChange={handleSubject}
                     onClick={handleSubject}
+                    data-name="subject"
                   >
                     <option value="">Selecciona un tema</option>
                     <option value="accounts problems">
@@ -147,7 +159,9 @@ export function Contact() {
                   placeholder="¿Cómo podemos ayudarte?"
                   rows="4"
                   maxLength={255}
+                  value={fields.message}
                   onChange={handleTextArea}
+                  data-name="message"
                 ></textarea>
               </label>
               {!isValidTextArea.overflowed && !isValidTextArea.charge && (

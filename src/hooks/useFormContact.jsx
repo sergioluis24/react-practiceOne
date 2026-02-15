@@ -5,12 +5,13 @@ export function useFormContact() {
   const emailId = useId();
   const subjectId = useId();
   const textAreaId = useId();
-  //   const initialForm = {
-  //   name: "",
-  //   email: "",
-  //   message: "",
-  // };
-
+  const fieldsInitial = {
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  };
+  const [fields, setFields] = useState(fieldsInitial);
   const [isSend, setIsSend] = useState(false);
   const [isError, setIsError] = useState(false);
   const [isValidName, setIsValidName] = useState({
@@ -60,10 +61,19 @@ export function useFormContact() {
   function sendMail(form) {
     setDataForm(form);
   }
+  const handleChangeField = (event) => {
+    const { name, value } = event.target;
+
+    setFields((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
 
   const handleValidationName = (event) => {
     let input = event.target.value;
     const nameRegex = /^[A-Za-zÁÉÍÓÚáéíóúÑñÜü]+(?:\s[A-Za-zÁÉÍÓÚáéíóúÑñÜü]+)*$/;
+    handleChangeField(event);
     if (!nameRegex.test(input)) {
       setIsValidName({
         valid: false,
@@ -86,6 +96,8 @@ export function useFormContact() {
   const handleValidationEmail = (event) => {
     let input = event.target.value;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    handleChangeField(event);
+
     if (!emailRegex.test(input)) {
       setIsValidEmail({
         valid: false,
@@ -106,6 +118,7 @@ export function useFormContact() {
       });
   };
   const handleSubject = (event) => {
+    handleChangeField(event);
     if (event.target.value !== "") {
       setIsValidSubject({
         empty: true,
@@ -133,6 +146,8 @@ export function useFormContact() {
   };
   const handleTextArea = (event) => {
     const MAX = 255;
+    handleChangeField(event);
+
     if (event.target.value.length >= MAX) {
       setIsValidTextArea({
         charge: false,
@@ -165,5 +180,8 @@ export function useFormContact() {
     textAreaId,
     setIsError,
     setIsSend,
+    fields,
+    setFields,
+    fieldsInitial,
   };
 }
