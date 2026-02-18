@@ -1,73 +1,71 @@
-import { useState } from "react";
 import { Pagination } from "../components/Pagination.jsx";
 import { JobListings } from "../components/JobListings.jsx";
 import { Search } from "../components/Search.jsx";
-import jobs from "./../data.json";
+import { useSearch } from "../hooks/useSearch.jsx";
+import { usePagination } from "../hooks/usePagination.jsx";
+import { useEffect, useState } from "react";
+import { useFilters } from "../hooks/useFilters.jsx";
 
 export function SearchPage() {
-  const [currentPage, setCurrentPage] = useState(1);
-  const [textSearch, setTextSearch] = useState("");
-  const [filtersSelect, setFilterSelect] = useState({
-    tecnology: "",
-    location: "",
-    experienceLevel: "",
-    salary: 0,
-  });
-  // useEffect(() => {
-  //   if (textSearch !== "" || filtersSelect) {
-  //     document.title = `Pagina numero ${currentPage}`;
-  //   } else document.title = `Buscando empleo`;
-  // }, [textSearch, filtersSelect, currentPage]);
-  const [isSearch, setIsSearch] = useState(false);
-  const RESULTS_PER_PAGE = 5;
-  const MINSALARY = filtersSelect.salary ? filtersSelect.salary : 0;
-  const jobsFilteredBySelect = jobs.filter(
-    (job) =>
-      (filtersSelect.tecnology === "" ||
-        job.data.tecnologia.includes(filtersSelect.tecnology)) &&
-      (filtersSelect.location === "" ||
-        job.ubicacion.toLowerCase() === filtersSelect.location.toLowerCase()) &&
-      (filtersSelect.experienceLevel === "" ||
-        job.data.nivel.toLowerCase() ===
-          filtersSelect.experienceLevel.toLowerCase()) &&
-      job.salario >= MINSALARY,
+  const [jobs, setJobs] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [total, setTotal] = useState(null);
+
+  // Usar hooks con el estado centralizado en SearchPage
+  const {
+    textSearch,
+    setTextSearch,
+    filtersSelect,
+    setFilterSelect,
+    jobsFilteredByText,
+  } = useFilters(jobs);
+
+  const {
+    currentPage,
+    RESULTS_PER_PAGE,
+    totalPages,
+    jobsRecorted,
+    handlePageChange,
+    setCurrentPage,
+  } = usePagination(jobsFilteredByText);
+
+  const { handleChangeSearch, handleChangeSelect, handleReset } = useSearch(
+    setTextSearch,
+    setFilterSelect,
+    setCurrentPage,
   );
+  useEffect(() => {
+    async function getJobs() {
+      try {
+        const params = new URLSearchParams();
+        if (textSearch) {
+          params.append("text", textSearch);
+        }
+        if (filtersSelect.tecnology) {
+          params.append("technology", filtersSelect.tecnology);
+        }
+        if (filtersSelect.location) {
+          params.append("modalidad", filtersSelect.location);
+        }
+        if (filtersSelect.experienceLevel) {
+          params.append("nivel", filtersSelect.experienceLevel);
+        }
+        const queryParams = params.toString();
+        const response = await fetch(
+          `https://jscamp-api.vercel.app/api/jobs?${queryParams}`,
+        );
+        const json = await response.json();
+        setJobs(json.data);
+        setTotal(json.total);
+      } catch (error) {
+        console.error("Error no se ha podido cargar los trabajos: " + error);
+      } finally {
+        setLoading(false);
+      }
+    }
+    getJobs();
+  }, [filtersSelect, textSearch]);
 
-  const jobsFilteredByText =
-    textSearch !== ""
-      ? jobsFilteredBySelect.filter((job) =>
-          job.titulo.toLowerCase().includes(textSearch.toLowerCase()),
-        )
-      : jobsFilteredBySelect;
-
-  const totalPages = Math.ceil(jobsFilteredByText.length / RESULTS_PER_PAGE);
-  const jobsRecorted = jobsFilteredByText.slice(
-    (currentPage - 1) * RESULTS_PER_PAGE,
-    currentPage * RESULTS_PER_PAGE,
-  );
-
-  function handlePageChange(page) {
-    setCurrentPage(page);
-  }
-  function handleChangeSearch(text) {
-    setTextSearch(text);
-    setCurrentPage(1);
-    setIsSearch(true);
-  }
-  function handleChangeSelect(formData) {
-    setFilterSelect(formData);
-    setCurrentPage(1);
-    setIsSearch(true);
-  }
-  function handleReset() {
-    setFilterSelect({
-      tecnology: "",
-      location: "",
-      experienceLevel: "",
-      salary: 0,
-    });
-    setIsSearch(false);
-  }
   return (
     <>
       <main className="grow shrink">
@@ -78,9 +76,12 @@ export function SearchPage() {
           onSearch={handleChangeSearch}
           onChangeSelect={handleChangeSelect}
           onReset={handleReset}
-          onChangeResults={{ isSearch, total: jobsFilteredByText.length }}
+          onChangeResults={{
+            isSearch: textSearch !== "",
+            total: jobsFilteredByText.length,
+          }}
         />
-        <JobListings jobs={jobsRecorted} />
+        <JobListings jobs={jobsRecorted} loading={loading} />
         <Pagination
           currentPage={currentPage}
           totalPages={totalPages}

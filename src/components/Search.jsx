@@ -1,22 +1,22 @@
-import { useId } from "react";
-import { useState } from "react";
+import { useId, useState } from "react";
 
-function useSearch(
-  onSearch,
-  onChangeSelect,
-  tecnologyId,
-  locationId,
-  experienceLevelId,
-  salayId,
-) {
+export function Search({ onSearch, onChangeSelect, onReset, onChangeResults }) {
   const [focusedField, setfocusedField] = useState(null);
   const focusFieldClass = "border-[#4f46e5] outline-[#4f46e5]";
-  function handleChangeSearch(event) {
-    onSearch(event.target.value);
-  }
-  function handleChangeSelect(event) {
-    event.preventDefault();
-    const formData = new FormData(event.target);
+
+  const searchId = useId(),
+    tecnologyId = useId(),
+    locationId = useId(),
+    experienceLevelId = useId(),
+    salayId = useId();
+
+  const handleChangeSearch = (e) => {
+    onSearch(e.target.value);
+  };
+
+  const handleChangeSelect = (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
     const filters = {
       tecnology: formData.get(tecnologyId),
       location: formData.get(locationId),
@@ -24,37 +24,7 @@ function useSearch(
       salary: parseInt(formData.get(salayId)),
     };
     onChangeSelect(filters);
-  }
-
-  return {
-    handleChangeSelect,
-    handleChangeSearch,
-    focusFieldClass,
-    focusedField,
-    setfocusedField,
   };
-}
-
-export function Search({ onSearch, onChangeSelect, onReset, onChangeResults }) {
-  const searchId = useId(),
-    tecnologyId = useId(),
-    locationId = useId(),
-    experienceLevelId = useId(),
-    salayId = useId();
-  const {
-    handleChangeSelect,
-    handleChangeSearch,
-    focusFieldClass,
-    focusedField,
-    setfocusedField,
-  } = useSearch(
-    onSearch,
-    onChangeSelect,
-    tecnologyId,
-    locationId,
-    experienceLevelId,
-    salayId,
-  );
 
   return (
     <>
@@ -95,6 +65,11 @@ export function Search({ onSearch, onChangeSelect, onReset, onChangeResults }) {
             <option value="">Tecnologia</option>
 
             <option value="JavaScript">Javascript</option>
+            <option value="Azure">Azure</option>
+            <option value="Kubernetes">Kubernetes</option>
+            <option value="Figma">Figma</option>
+            <option value="Mysql">Mysql</option>
+            <option value="tailwind">tailwind</option>
             <option value="MongoDB">MongoDB</option>
             <option value="React">React</option>
             <option value="Node.js">Node.js</option>
@@ -127,7 +102,7 @@ export function Search({ onSearch, onChangeSelect, onReset, onChangeResults }) {
             <option value="">Nivel de experiencia</option>
 
             <option value="Junior">Junior</option>
-            <option value="Semi Senior">Semi Senior</option>
+            <option value="mid-level">Mid-level</option>
             <option value="Senior">Senior</option>
           </select>
           <input
