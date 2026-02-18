@@ -11,7 +11,7 @@ export function SearchPage() {
   const [loading, setLoading] = useState(true);
   const [total, setTotal] = useState(null);
 
-  // Usar hooks con el estado centralizado en SearchPage
+  // Usar hooks con el estado centralizado en SearchPages
   const {
     textSearch,
     setTextSearch,
