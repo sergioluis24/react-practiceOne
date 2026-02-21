@@ -1,15 +1,16 @@
 import { useState } from "react";
 
-const RESULTS_PER_PAGE = 5;
+// const RESULTS_PER_PAGE = 5;
 
-export function usePagination(jobsFilteredByText) {
+export function usePagination(jobs, total) {
   const [currentPage, setCurrentPage] = useState(1);
-
-  const totalPages = Math.ceil(jobsFilteredByText.length / RESULTS_PER_PAGE);
-  const jobsRecorted = jobsFilteredByText.slice(
-    (currentPage - 1) * RESULTS_PER_PAGE,
-    currentPage * RESULTS_PER_PAGE,
-  );
+  const OFFSET = currentPage - 1;
+  const LIMIT = 5;
+  const totalPages = Math.ceil(total / LIMIT);
+  // const jobsRecorted = jobs.slice(
+  //   (currentPage - 1) * RESULTS_PER_PAGE,
+  //   currentPage * RESULTS_PER_PAGE,
+  // );
 
   function handlePageChange(page) {
     setCurrentPage(page);
@@ -17,9 +18,11 @@ export function usePagination(jobsFilteredByText) {
 
   return {
     currentPage,
-    RESULTS_PER_PAGE,
+    // RESULTS_PER_PAGE,
     totalPages,
-    jobsRecorted,
+    // jobsRecorted,
+    OFFSET,
+    LIMIT,
     handlePageChange,
     setCurrentPage,
   };

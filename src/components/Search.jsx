@@ -28,7 +28,7 @@ export function Search({ onSearch, onChangeSelect, onReset, onChangeResults }) {
 
   return (
     <>
-      <form className="mb-10" onSubmit={handleChangeSelect}>
+      <form className="mb-6" onSubmit={handleChangeSelect}>
         <section className="flex relative h-11 mb-3">
           <input
             className={`bg-[#353c4a] text-[#f2f4f3] block w-full h-full py-2 px-3 border-0 rounded-md transition-all  ${focusedField === "title" ? focusFieldClass : ""}`}
@@ -103,7 +103,7 @@ export function Search({ onSearch, onChangeSelect, onReset, onChangeResults }) {
 
             <option value="Junior">Junior</option>
             <option value="mid-level">Mid-level</option>
-            <option value="Senior">Senior</option>
+            <option value="senior">Senior</option>
           </select>
           <input
             placeholder="1000"

@@ -12,22 +12,17 @@ export function SearchPage() {
   const [total, setTotal] = useState(null);
 
   // Usar hooks con el estado centralizado en SearchPage
-  const {
-    textSearch,
-    setTextSearch,
-    filtersSelect,
-    setFilterSelect,
-    jobsFilteredByText,
-  } = useFilters(jobs);
+  const { textSearch, setTextSearch, filtersSelect, setFilterSelect } =
+    useFilters();
 
   const {
     currentPage,
-    RESULTS_PER_PAGE,
     totalPages,
-    jobsRecorted,
     handlePageChange,
     setCurrentPage,
-  } = usePagination(jobsFilteredByText);
+    OFFSET,
+    LIMIT,
+  } = usePagination(jobs, total);
 
   const { handleChangeSearch, handleChangeSelect, handleReset } = useSearch(
     setTextSearch,
@@ -37,6 +32,8 @@ export function SearchPage() {
   useEffect(() => {
     async function getJobs() {
       try {
+        setLoading(true);
+
         const params = new URLSearchParams();
         if (textSearch) {
           params.append("text", textSearch);
@@ -45,11 +42,14 @@ export function SearchPage() {
           params.append("technology", filtersSelect.tecnology);
         }
         if (filtersSelect.location) {
-          params.append("modalidad", filtersSelect.location);
+          params.append("type", filtersSelect.location);
         }
         if (filtersSelect.experienceLevel) {
-          params.append("nivel", filtersSelect.experienceLevel);
+          params.append("level", filtersSelect.experienceLevel);
         }
+        params.append("offset", OFFSET);
+        params.append("limit", LIMIT);
+
         const queryParams = params.toString();
         const response = await fetch(
           `https://jscamp-api.vercel.app/api/jobs?${queryParams}`,
@@ -64,8 +64,7 @@ export function SearchPage() {
       }
     }
     getJobs();
-  }, [filtersSelect, textSearch]);
-
+  }, [filtersSelect, textSearch, currentPage]);
   return (
     <>
       <main className="grow shrink">
@@ -78,10 +77,10 @@ export function SearchPage() {
           onReset={handleReset}
           onChangeResults={{
             isSearch: textSearch !== "",
-            total: jobsFilteredByText.length,
+            total: total,
           }}
         />
-        <JobListings jobs={jobsRecorted} loading={loading} />
+        <JobListings jobs={jobs} loading={loading} />
         <Pagination
           currentPage={currentPage}
           totalPages={totalPages}
