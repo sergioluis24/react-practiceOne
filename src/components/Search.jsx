@@ -67,6 +67,7 @@ export function Search({
             onBlur={() => setfocusedField(null)}
           >
             {/* Quede aqui, tengo que renderizar segun si hay filtros o no en el localstorage las opciones. */}
+            {/* Ademas tengo que renderizar cuantos filtros activos hay */}
             {/* {filterStorage && <option value="">Tecnologia</option>} */}
             <option value="">Tecnologia</option>
             <option value="JavaScript">Javascript</option>
