@@ -24,11 +24,8 @@ export function SearchPage() {
     LIMIT,
   } = usePagination(jobs, total);
 
-  const { handleChangeSearch, handleChangeSelect, handleReset } = useSearch(
-    setTextSearch,
-    setFilterSelect,
-    setCurrentPage,
-  );
+  const { handleChangeSearch, handleChangeSelect, handleReset, filterLength } =
+    useSearch(filtersSelect, setTextSearch, setFilterSelect, setCurrentPage);
   useEffect(() => {
     async function getJobs() {
       try {
@@ -72,6 +69,8 @@ export function SearchPage() {
           Plataforma de empleos
         </h1>
         <Search
+          filterStorage={filtersSelect}
+          filterLength={filterLength}
           onSearch={handleChangeSearch}
           onChangeSelect={handleChangeSelect}
           onReset={handleReset}

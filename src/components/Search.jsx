@@ -1,15 +1,20 @@
 import { useId, useState } from "react";
 
-export function Search({ onSearch, onChangeSelect, onReset, onChangeResults }) {
+export function Search({
+  onSearch,
+  onChangeSelect,
+  onReset,
+  onChangeResults,
+  filterLength,
+  filterStorage,
+}) {
   const [focusedField, setfocusedField] = useState(null);
   const focusFieldClass = "border-[#4f46e5] outline-[#4f46e5]";
 
   const searchId = useId(),
     tecnologyId = useId(),
     locationId = useId(),
-    experienceLevelId = useId(),
-    salayId = useId();
-
+    experienceLevelId = useId();
   const handleChangeSearch = (e) => {
     onSearch(e.target.value);
   };
@@ -21,7 +26,6 @@ export function Search({ onSearch, onChangeSelect, onReset, onChangeResults }) {
       tecnology: formData.get(tecnologyId),
       location: formData.get(locationId),
       experienceLevel: formData.get(experienceLevelId),
-      salary: parseInt(formData.get(salayId)),
     };
     onChangeSelect(filters);
   };
@@ -42,13 +46,13 @@ export function Search({ onSearch, onChangeSelect, onReset, onChangeResults }) {
           />
           <button
             type="submit"
-            className=" absolute top-[5%] right-40 bg-[#0466c8] text-[#f2f4f3] h-9/10 px-6 rounded-md cursor-pointer sm:right-36 sm:px-2"
+            className={`${filterLength ? "translate-x-0" : "translate-x-[140px]"} transition absolute top-[5%] right-40 bg-[#0466c8] text-[#f2f4f3] h-9/10 px-6 rounded-md cursor-pointer sm:right-36 sm:px-2`}
           >
             Aplicar filtros
           </button>
           <button
             type="reset"
-            className="absolute top-[5%] right-1 bg-[#5d6471] text-[#f2f4f3] h-9/10 px-6 sm:px-4 rounded-md cursor-pointer"
+            className={`${filterLength ? "translate-x-0 opacity-100 pointer-events-auto" : "translate-x-10 opacity-0 pointer-events-none"} transition absolute top-[5%] right-1 bg-[#5d6471] text-[#f2f4f3] h-9/10 px-6 sm:px-4 rounded-md cursor-pointer`}
             onClick={onReset}
           >
             Limpiar filtros
@@ -62,8 +66,9 @@ export function Search({ onSearch, onChangeSelect, onReset, onChangeResults }) {
             onFocus={() => setfocusedField("tecnology")}
             onBlur={() => setfocusedField(null)}
           >
+            {/* Quede aqui, tengo que renderizar segun si hay filtros o no en el localstorage las opciones. */}
+            {/* {filterStorage && <option value="">Tecnologia</option>} */}
             <option value="">Tecnologia</option>
-
             <option value="JavaScript">Javascript</option>
             <option value="Azure">Azure</option>
             <option value="Kubernetes">Kubernetes</option>
@@ -105,17 +110,6 @@ export function Search({ onSearch, onChangeSelect, onReset, onChangeResults }) {
             <option value="mid-level">Mid-level</option>
             <option value="senior">Senior</option>
           </select>
-          <input
-            placeholder="1000"
-            type="number"
-            name={salayId}
-            id={salayId}
-            min="0"
-            step="1000"
-            className={`bg-[#353c4a] text-[#f2f4f3] w-4/12 p-2 rounded-md transition-all ${focusedField === "experienceLevel" ? focusFieldClass : ""}`}
-            onFocus={() => setfocusedField("experienceLevel")}
-            onBlur={() => setfocusedField(null)}
-          />
         </section>
 
         <h3 className="mt-6 text-xl">
