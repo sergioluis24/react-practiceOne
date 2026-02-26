@@ -16,12 +16,12 @@ export function useSearch(
   }
 
   function handleChangeSelect(formData) {
-    // setFilterLength(Object.values(formData).filter(Boolean).length);
     localStorage.setItem("Debjobsfilters", JSON.stringify(formData));
     setFilterSelect(formData);
     setCurrentPage(1);
   }
   function handleReset() {
+    localStorage.removeItem("Debjobsfilters");
     setFilterSelect({
       tecnology: "",
       location: "",

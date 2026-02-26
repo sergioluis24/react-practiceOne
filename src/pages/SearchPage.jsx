@@ -10,8 +10,6 @@ export function SearchPage() {
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [total, setTotal] = useState(null);
-
-  // Usar hooks con el estado centralizado en SearchPage
   const { textSearch, setTextSearch, filtersSelect, setFilterSelect } =
     useFilters();
 

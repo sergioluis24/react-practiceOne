@@ -5,11 +5,11 @@ export function LoadingFetch({ loading }) {
     >
       <button
         type="button"
-        class="inline-flex items-center text-body bg-neutral-primary-soft border border-default hover:bg-neutral-secondary-medium  shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 pointer-events-none"
+        className="inline-flex items-center text-body bg-neutral-primary-soft border border-default hover:bg-neutral-secondary-medium  shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 pointer-events-none"
       >
         <svg
           aria-hidden="true"
-          class="w-4 h-4 text-neutral-tertiary animate-spin fill-brand me-2"
+          className="w-4 h-4 text-neutral-tertiary animate-spin fill-brand me-2"
           viewBox="0 0 100 101"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"

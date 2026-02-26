@@ -29,7 +29,6 @@ export function Search({
     };
     onChangeSelect(filters);
   };
-
   return (
     <>
       <form className="mb-6" onSubmit={handleChangeSelect}>
@@ -46,7 +45,7 @@ export function Search({
           />
           <button
             type="submit"
-            className={`${filterLength ? "translate-x-0" : "translate-x-[140px]"} transition absolute top-[5%] right-40 bg-[#0466c8] text-[#f2f4f3] h-9/10 px-6 rounded-md cursor-pointer sm:right-36 sm:px-2`}
+            className={`${filterLength ? "translate-x-0" : "translate-x-35"} transition absolute top-[5%] right-40 bg-[#0466c8] text-[#f2f4f3] h-9/10 px-6 rounded-md cursor-pointer sm:right-36 sm:px-2`}
           >
             Aplicar filtros
           </button>
@@ -67,9 +66,16 @@ export function Search({
             onBlur={() => setfocusedField(null)}
           >
             {/* Quede aqui, tengo que renderizar segun si hay filtros o no en el localstorage las opciones. */}
-            {/* Ademas tengo que renderizar cuantos filtros activos hay */}
-            {/* {filterStorage && <option value="">Tecnologia</option>} */}
-            <option value="">Tecnologia</option>
+            {filterStorage.tecnology && (
+              <option
+                className="text-amber-300"
+                value={filterStorage.tecnology}
+              >
+                {filterStorage.tecnology}
+              </option>
+            )}
+            {!filterStorage.tecnology && <option value="">Tecnologia</option>}
+
             <option value="JavaScript">Javascript</option>
             <option value="Azure">Azure</option>
             <option value="Kubernetes">Kubernetes</option>
@@ -92,7 +98,12 @@ export function Search({
             onFocus={() => setfocusedField("location")}
             onBlur={() => setfocusedField(null)}
           >
-            <option value="">Ubicacion</option>
+            {filterStorage.location && (
+              <option className="text-amber-300" value={filterStorage.location}>
+                {filterStorage.location}
+              </option>
+            )}
+            {!filterStorage.location && <option value="">Ubicacion</option>}
 
             <option value="Remoto">Remoto</option>
             <option value="Presencial">Presencial</option>
@@ -105,7 +116,17 @@ export function Search({
             onFocus={() => setfocusedField("experienceLevel")}
             onBlur={() => setfocusedField(null)}
           >
-            <option value="">Nivel de experiencia</option>
+            {filterStorage.experienceLevel && (
+              <option
+                className="text-amber-300"
+                value={filterStorage.experienceLevel}
+              >
+                {filterStorage.experienceLevel}
+              </option>
+            )}
+            {!filterStorage.experienceLevel && (
+              <option value="">Nivel de experiencia</option>
+            )}
 
             <option value="Junior">Junior</option>
             <option value="mid-level">Mid-level</option>
@@ -123,6 +144,11 @@ export function Search({
           )}
         </h3>
       </form>
+      {filterLength > 0 && (
+        <div className="px-4 py-2 bg-slate-100 rounded-4xl w-fit text-gray-700 shadow-md shadow-blue-200/10">
+          <p>Ha aplicado {filterLength} Filtro/s</p>
+        </div>
+      )}
     </>
   );
 }
