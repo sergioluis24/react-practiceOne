@@ -1,5 +1,3 @@
-// import { useState } from "react";
-
 export function useSearch(
   filters,
   setTextSearch,
@@ -11,6 +9,7 @@ export function useSearch(
   ).length;
 
   function handleChangeSearch(text) {
+    localStorage.setItem("DebjobsTextFilter", JSON.stringify(text));
     setTextSearch(text);
     setCurrentPage(1);
   }

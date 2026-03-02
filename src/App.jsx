@@ -8,6 +8,7 @@ import { SearchPage } from "./pages/SearchPage.jsx";
 import { Routing } from "./components/Routing.jsx";
 import { Contact } from "./pages/Contact.jsx";
 import { ButtonBack } from "./components/ButtonBack.jsx";
+import { Modal } from "flowbite-react";
 function App() {
   return (
     <>

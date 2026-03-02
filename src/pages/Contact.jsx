@@ -33,6 +33,7 @@ export function Contact() {
 
   return (
     <>
+      <title>Contacto</title>
       <main className=" pb-12">
         {/* <!-- HeadlineText --> */}
         <div className=" pb-2">

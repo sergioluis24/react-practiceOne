@@ -1,6 +1,7 @@
-import { useId, useState } from "react";
+import { useId, useRef, useState } from "react";
 
 export function Search({
+  textSearch,
   onSearch,
   onChangeSelect,
   onReset,
@@ -10,13 +11,18 @@ export function Search({
 }) {
   const [focusedField, setfocusedField] = useState(null);
   const focusFieldClass = "border-[#4f46e5] outline-[#4f46e5]";
-
+  const initialValueText = textSearch;
   const searchId = useId(),
     tecnologyId = useId(),
     locationId = useId(),
     experienceLevelId = useId();
+  const timeRef = useRef(null);
+
   const handleChangeSearch = (e) => {
-    onSearch(e.target.value);
+    if (timeRef.current) clearTimeout(timeRef);
+    timeRef.current = setTimeout(() => {
+      onSearch(e.target.value);
+    }, 500);
   };
 
   const handleChangeSelect = (e) => {
@@ -42,6 +48,7 @@ export function Search({
             onChange={handleChangeSearch}
             onFocus={() => setfocusedField("title")}
             onBlur={() => setfocusedField(null)}
+            defaultValue={initialValueText}
           />
           <button
             type="submit"

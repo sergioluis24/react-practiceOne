@@ -23,6 +23,7 @@ export function Home() {
   };
   return (
     <>
+      <title>Devjobs</title>
       <main className="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white min-h-screen">
         {/* HERO */}
         <section className="pt-30 pb-6">

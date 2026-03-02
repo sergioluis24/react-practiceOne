@@ -7,10 +7,6 @@ export function usePagination(jobs, total) {
   const OFFSET = currentPage - 1;
   const LIMIT = 5;
   const totalPages = Math.ceil(total / LIMIT);
-  // const jobsRecorted = jobs.slice(
-  //   (currentPage - 1) * RESULTS_PER_PAGE,
-  //   currentPage * RESULTS_PER_PAGE,
-  // );
 
   function handlePageChange(page) {
     setCurrentPage(page);
@@ -18,9 +14,7 @@ export function usePagination(jobs, total) {
 
   return {
     currentPage,
-    // RESULTS_PER_PAGE,
     totalPages,
-    // jobsRecorted,
     OFFSET,
     LIMIT,
     handlePageChange,

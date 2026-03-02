@@ -17,6 +17,13 @@ export function Pagination({ currentPage = 1, totalPages = 5, onPageChange }) {
       pointerEvents: "none",
     };
   }
+  const urlPageBuilder = (page) => {
+    const url = new URL(window.location.href);
+    const searchParams = url.searchParams;
+    searchParams.set("page", String(page));
+    url.search = searchParams.toString();
+    return `${url.pathname}?${url.searchParams.toString()}`;
+  };
   function handleNextPage() {
     if (!isLastPage) onPageChange(currentPage + 1);
   }
@@ -33,11 +40,13 @@ export function Pagination({ currentPage = 1, totalPages = 5, onPageChange }) {
           className="invert opacity-60 w-14 px-5 py-3 rounded-xl cursor-pointer hover:bg-amber-50 hover:text-gray-900 hover:invert-0"
           style={isFirstPage}
           onClick={handlePreviousPage}
+          href={urlPageBuilder(currentPage - 1)}
         >
           <img src={arrow} alt="" className="rotate-180 " />
         </a>
         {pages.map((page) => (
           <a
+            href={urlPageBuilder(page)}
             key={page}
             onClick={() => handlePageChange(page)}
             className={`${
@@ -51,6 +60,7 @@ export function Pagination({ currentPage = 1, totalPages = 5, onPageChange }) {
           className="invert opacity-60 w-14 px-5 py-3 rounded-xl cursor-pointer hover:bg-amber-50 hover:text-gray-900 hover:invert-0"
           style={isLastPage}
           onClick={handleNextPage}
+          href={urlPageBuilder(currentPage + 1)}
         >
           <img src={arrow} alt="" className=" " />
         </a>
