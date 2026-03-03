@@ -1,5 +1,5 @@
 import { useId, useRef, useState } from "react";
-
+import data from "./../../filtersJSON.json";
 export function Search({
   textSearch,
   onSearch,
@@ -82,8 +82,10 @@ export function Search({
               </option>
             )}
             {!filterStorage.tecnology && <option value="">Tecnologia</option>}
-
-            <option value="JavaScript">Javascript</option>
+            {data.technologies.map((tecnology) => (
+              <option value={tecnology}>{tecnology}</option>
+            ))}
+            {/* <option value="JavaScript">Javascript</option>
             <option value="Azure">Azure</option>
             <option value="Kubernetes">Kubernetes</option>
             <option value="Figma">Figma</option>
@@ -96,7 +98,7 @@ export function Search({
             <option value="Java">Java</option>
             <option value="Express">Express</option>
             <option value="Docker">Docker</option>
-            <option value="Python">Python</option>
+            <option value="Python">Python</option> */}
           </select>
           <select
             className={`bg-[#353c4a] text-[#f2f4f3] w-3/12 p-2 rounded-md transition-all ${focusedField === "location" ? focusFieldClass : ""}`}
@@ -111,10 +113,9 @@ export function Search({
               </option>
             )}
             {!filterStorage.location && <option value="">Ubicacion</option>}
-
-            <option value="Remoto">Remoto</option>
-            <option value="Presencial">Presencial</option>
-            <option value="Híbrido">Híbrido</option>
+            {data.modalities.map((modality) => (
+              <option value={modality}>{modality}</option>
+            ))}
           </select>
           <select
             className={`bg-[#353c4a] text-[#f2f4f3] w-4/12 p-2 rounded-md transition-all ${focusedField === "experienceLevel" ? focusFieldClass : ""}`}
@@ -134,10 +135,9 @@ export function Search({
             {!filterStorage.experienceLevel && (
               <option value="">Nivel de experiencia</option>
             )}
-
-            <option value="Junior">Junior</option>
-            <option value="mid-level">Mid-level</option>
-            <option value="senior">Senior</option>
+            {data.levels.map((level) => (
+              <option value={level}>{level}</option>
+            ))}
           </select>
         </section>
 

@@ -1,20 +1,9 @@
-import { useRouter } from "./../hooks/useRouter.jsx";
+import { Link as LinkRouter } from "react-router";
 
-export function Link({ href, children, ...restOfTheProps }) {
-  const { navigateTo } = useRouter();
-  function handleClick(event) {
-    event.preventDefault();
-    navigateTo(href);
-  }
-
+export function Link({ children, href, ...restOfTheProps }) {
   return (
-    <a
-      href={href}
-      className={`cursor-pointer`}
-      onClick={handleClick}
-      {...restOfTheProps}
-    >
+    <LinkRouter to={href} className={`cursor-pointer`} {...restOfTheProps}>
       {children}
-    </a>
+    </LinkRouter>
   );
 }
