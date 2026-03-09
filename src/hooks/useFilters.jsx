@@ -32,7 +32,7 @@ export function useFilters(setError, currentPage) {
     const basePath = window.location.pathname;
     const newUrl = paramsString ? `${basePath}?${paramsString}` : basePath;
     navigateTo(newUrl);
-  }, [textSearch, filtersSelect, currentPage, navigateTo]);
+  }, [textSearch, filtersSelect, currentPage]);
   const [focusedField, setfocusedField] = useState(null);
   const focusFieldClass = "border-[#4f46e5] outline-[#4f46e5]";
 
