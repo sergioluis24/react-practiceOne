@@ -4,8 +4,10 @@ import { LoadingFetch } from "./../components/LoadingFetch.jsx";
 import { IconJobNotFound } from "../icons/IconJobNotFound.jsx";
 import { ButtonPrimary } from "../components/ButtonPrimary.jsx";
 import snarkdown from "snarkdown";
+import { Link } from "../components/Link.jsx";
+import styles from "./Detail.module.css";
 
-function JobNotFound({ navigate }) {
+function JobNotFound() {
   return (
     <div className="flex justify-center items-center flex-col mt-20">
       <div className="mb-10 ">
@@ -18,19 +20,22 @@ function JobNotFound({ navigate }) {
       <p className="mb-6 text-lg  font-medium text-slate-50/70">
         Oops! Parece que entraste al empleo equivocado
       </p>
-      <ButtonPrimary size="md" onClick={() => navigate("/")}>
-        Volver al inicio
-      </ButtonPrimary>
+      <Link href="/search">
+        <ButtonPrimary size="md">Busca empleos</ButtonPrimary>
+      </Link>
     </div>
   );
 }
-function SpecialSection({ title, content }) {
+function SpecialSection({ title, content, ...props }) {
   const html = snarkdown(content ?? "");
   return (
-    <>
-      <h3 className="text-3xl">{title}</h3>
-      <div className="" dangerouslySetInnerHTML={{ __html: html }}></div>
-    </>
+    <section {...props}>
+      <h3 className="text-2xl font-semibold mb-6">{title}</h3>
+      <div
+        className={`prose prose-li:text-slate-50/80 prose-li:list-none  ${styles.li} `}
+        dangerouslySetInnerHTML={{ __html: html }}
+      ></div>
+    </section>
   );
 }
 export function Detail() {
@@ -38,7 +43,6 @@ export function Detail() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const { id } = useParams();
-  const navigate = useNavigate();
   useEffect(() => {
     fetch(`https://jscamp-api.vercel.app/api/jobs/${id}`)
       .then((response) => {
@@ -58,19 +62,21 @@ export function Detail() {
   }, [id]);
   const capitalize = (text) => text.charAt(0).toUpperCase() + text.slice(1);
 
-  if (error) return <JobNotFound navigate={navigate} />;
+  if (error) return <JobNotFound />;
   if (!job) return null;
   return (
     <>
       {loading && <LoadingFetch />}
       <section>
-        <div className="bread-crumb mb-10">
+        <div className="bread-crumb -ml-6 mb-10">
           <p className="text-slate-100/70 ">
-            Empleos /{" "}
-            <span className="text-slate-100  ">{capitalize(job.titulo)}</span>
+            <Link href="/search" className="hover:underline">
+              Empleos
+            </Link>{" "}
+            / <span className="text-slate-100  ">{capitalize(job.titulo)}</span>
           </p>
         </div>
-        <article className="w-[95%] mx-auto">
+        <article className="">
           <header className="flex  flex-row  justify-between mb-6">
             <div>
               <h2 className="text-4xl text-slate-100 font-bold mb-4">
@@ -85,15 +91,22 @@ export function Detail() {
             <ButtonPrimary size="md">Aplicar ahora</ButtonPrimary>
           </header>
           <main>
-            <h3 className="text-3xl text-slate-100 font-bold mb-4">
-              Descripcion del puesto
-            </h3>
-            <p className="text-pretty text-slate-100/70 text-lg">
-              {job.content.description}
-            </p>
+            <section className="mb-8">
+              <h3 className="text-2xl text-slate-100 font-semibold mb-4">
+                Descripcion del puesto
+              </h3>
+              <p className="text-pretty text-slate-100/80 text-lg">
+                {job.content.description}
+              </p>
+            </section>
             <SpecialSection
               title="Responsabilidades"
               content={job.content.responsibilities}
+              className="mb-8"
+            />
+            <SpecialSection
+              title="Requisitos"
+              content={job.content.requirements}
             />
           </main>
         </article>

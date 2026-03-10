@@ -2,7 +2,6 @@ import { useSearchParams } from "react-router";
 export function useFilterStorage(setError) {
   const [searchParams, setSearchParams] = useSearchParams();
   function getLocalStorageFilters() {
-    // const params = new URLSearchParams(window.location.search);
     if (searchParams) return buildUrlFilters();
     else {
       try {
@@ -39,30 +38,21 @@ export function useFilterStorage(setError) {
     }
   }
   function buildUrlFilters() {
-    // setSearchParams((prevParams) => {
-    //   const params = new URLSearchParams(prevParams);
-    //   const filterUrl = {};
-    //   params.set("tecnology", params.get("tecnology") ?? "");
-    //   params.set("location", params.get("location") ?? "");
-    //   params.set("experienceLevel", params.get("experienceLevel") ?? "");
-    //   if (params.get("tecnology")) {
-    //     filterUrl.tecnology = params.get("tecnology");
-    //   }
-    //   if (params.get("location")) {
-    //     filterUrl.location = params.get("location");
-    //   }
-    //   if (params.get("experienceLevel")) {
-    //     filterUrl.experienceLevel = params.get("experienceLevel");
-    //   }
-    //   console.log(filterUrl);
-    //   return filterUrl;
-    // });
-    return {
+    const filterUrl = {
       tecnology: "",
       location: "",
       experienceLevel: "",
-      // Arreglar este bug con el useSearchParams de react router
     };
+    if (searchParams.get("tecnology")) {
+      filterUrl.tecnology = searchParams.get("tecnology") ?? "";
+    }
+    if (searchParams.get("location")) {
+      filterUrl.location = searchParams.get("location") ?? "";
+    }
+    if (searchParams.get("experienceLevel")) {
+      filterUrl.experienceLevel = searchParams.get("experienceLevel") ?? "";
+    }
+    return filterUrl;
   }
   return { getLocalStorageFilters, getLocalStorageTextToFilter };
 }

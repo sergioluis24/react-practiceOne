@@ -1,4 +1,5 @@
 import { ButtonPrimary } from "../components/ButtonPrimary.jsx";
+import { Link } from "../components/Link.jsx";
 import { IconNotFoundPage } from "./../icons/IconNotFoundPage.jsx";
 export function NotFoundPage() {
   return (
@@ -13,7 +14,9 @@ export function NotFoundPage() {
       <p className="mb-6 text-lg  font-medium text-slate-50/70">
         Oops! Parece que entraste a la pagina equivocada
       </p>
-      <ButtonPrimary>Volver al inicio</ButtonPrimary>
+      <Link href="/">
+        <ButtonPrimary size="md">Volver al inicio</ButtonPrimary>
+      </Link>
     </div>
   );
 }

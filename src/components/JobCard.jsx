@@ -1,4 +1,5 @@
-import { Link } from "./Link";
+import { ButtonPrimary } from "./ButtonPrimary";
+import { Link } from "./Link.jsx";
 export function JobCard({ job, isLast }) {
   return (
     <>
@@ -19,9 +20,18 @@ export function JobCard({ job, isLast }) {
           </small>
           <p className="w-10/12">{job.descripcion}</p>
         </div>
-        <button className="bg-[#0466c8] h-14 px-6 rounded-2xl hover:brightness-105 hover:scale-105 transition-all">
-          Aplicar
-        </button>
+        <div className="flex flex-col gap-4">
+          <Link href={`/detail/${job.id}`}>
+            <ButtonPrimary
+              size="sm"
+              bg="bg-gray-700"
+              shadow="shadow-gray-700/80"
+            >
+              Ver detalles
+            </ButtonPrimary>
+          </Link>
+          <ButtonPrimary size="sm">Aplicar</ButtonPrimary>
+        </div>
       </article>
     </>
   );
