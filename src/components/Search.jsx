@@ -83,7 +83,9 @@ export function Search({
             )}
             {!filterStorage.tecnology && <option value="">Tecnologia</option>}
             {data.technologies.map((tecnology) => (
-              <option value={tecnology}>{tecnology}</option>
+              <option value={tecnology} key={tecnology}>
+                {tecnology}
+              </option>
             ))}
             {/* <option value="JavaScript">Javascript</option>
             <option value="Azure">Azure</option>
@@ -114,7 +116,9 @@ export function Search({
             )}
             {!filterStorage.location && <option value="">Ubicacion</option>}
             {data.modalities.map((modality) => (
-              <option value={modality}>{modality}</option>
+              <option value={modality} key={modality}>
+                {modality}
+              </option>
             ))}
           </select>
           <select
@@ -136,7 +140,9 @@ export function Search({
               <option value="">Nivel de experiencia</option>
             )}
             {data.levels.map((level) => (
-              <option value={level}>{level}</option>
+              <option value={level} key={level}>
+                {level}
+              </option>
             ))}
           </select>
         </section>

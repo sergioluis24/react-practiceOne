@@ -1,4 +1,5 @@
 import arrow from "./../assets/right-arrow.png";
+import { Link } from "./Link.jsx";
 export function Pagination({ currentPage = 1, totalPages = 5, onPageChange }) {
   const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
   let isFirstPage, isLastPage;
@@ -36,16 +37,16 @@ export function Pagination({ currentPage = 1, totalPages = 5, onPageChange }) {
   return (
     <>
       <section className="flex items-center flex-wrap justify-center">
-        <a
+        <Link
           className="invert opacity-60 w-14 px-5 py-3 rounded-xl cursor-pointer hover:bg-amber-50 hover:text-gray-900 hover:invert-0"
           style={isFirstPage}
           onClick={handlePreviousPage}
           href={urlPageBuilder(currentPage - 1)}
         >
           <img src={arrow} alt="" className="rotate-180 " />
-        </a>
+        </Link>
         {pages.map((page) => (
-          <a
+          <Link
             href={urlPageBuilder(page)}
             key={page}
             onClick={() => handlePageChange(page)}
@@ -54,16 +55,16 @@ export function Pagination({ currentPage = 1, totalPages = 5, onPageChange }) {
             } px-5 py-3 rounded-xl cursor-pointer hover:bg-amber-50 hover:text-gray-900`}
           >
             {page}
-          </a>
+          </Link>
         ))}
-        <a
+        <Link
           className="invert opacity-60 w-14 px-5 py-3 rounded-xl cursor-pointer hover:bg-amber-50 hover:text-gray-900 hover:invert-0"
           style={isLastPage}
           onClick={handleNextPage}
           href={urlPageBuilder(currentPage + 1)}
         >
           <img src={arrow} alt="" className=" " />
-        </a>
+        </Link>
       </section>
     </>
   );

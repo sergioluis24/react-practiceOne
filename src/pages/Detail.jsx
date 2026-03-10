@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router";
+import { useParams } from "react-router";
 import { LoadingFetch } from "./../components/LoadingFetch.jsx";
 import { IconJobNotFound } from "../icons/IconJobNotFound.jsx";
 import { ButtonPrimary } from "../components/ButtonPrimary.jsx";
