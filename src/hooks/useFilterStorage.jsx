@@ -1,7 +1,9 @@
+import { useSearchParams } from "react-router";
 export function useFilterStorage(setError) {
+  const [searchParams, setSearchParams] = useSearchParams();
   function getLocalStorageFilters() {
-    const params = new URLSearchParams(window.location.search);
-    if (params) return buildUrlFilters(params);
+    // const params = new URLSearchParams(window.location.search);
+    if (searchParams) return buildUrlFilters();
     else {
       try {
         if (localStorage.getItem("Debjobsfilters")) {
@@ -36,21 +38,31 @@ export function useFilterStorage(setError) {
       }
     }
   }
-  function buildUrlFilters(params) {
-    const filterUrl = {};
-    const filtersTecnology = params.get("tecnology");
-    const filtersLocation = params.get("location");
-    const filtersExperienceLevel = params.get("experienceLevel");
-    if (filtersTecnology) {
-      filterUrl.tecnology = filtersTecnology;
-    }
-    if (filtersLocation) {
-      filterUrl.location = filtersLocation;
-    }
-    if (filtersExperienceLevel) {
-      filterUrl.experienceLevel = filtersExperienceLevel;
-    }
-    return filterUrl;
+  function buildUrlFilters() {
+    // setSearchParams((prevParams) => {
+    //   const params = new URLSearchParams(prevParams);
+    //   const filterUrl = {};
+    //   params.set("tecnology", params.get("tecnology") ?? "");
+    //   params.set("location", params.get("location") ?? "");
+    //   params.set("experienceLevel", params.get("experienceLevel") ?? "");
+    //   if (params.get("tecnology")) {
+    //     filterUrl.tecnology = params.get("tecnology");
+    //   }
+    //   if (params.get("location")) {
+    //     filterUrl.location = params.get("location");
+    //   }
+    //   if (params.get("experienceLevel")) {
+    //     filterUrl.experienceLevel = params.get("experienceLevel");
+    //   }
+    //   console.log(filterUrl);
+    //   return filterUrl;
+    // });
+    return {
+      tecnology: "",
+      location: "",
+      experienceLevel: "",
+      // Arreglar este bug con el useSearchParams de react router
+    };
   }
   return { getLocalStorageFilters, getLocalStorageTextToFilter };
 }

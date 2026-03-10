@@ -1,3 +1,4 @@
+import { Link } from "./Link";
 export function JobCard({ job, isLast }) {
   return (
     <>
@@ -7,9 +8,12 @@ export function JobCard({ job, isLast }) {
         } px-8 py-12`}
       >
         <div className="w-[%100]">
-          <h3 className="text-2xl mb-1">
+          <Link
+            href={`/detail/${job.id}`}
+            className="text-2xl mb-1 hover:underline"
+          >
             <b>{job.titulo}</b>
-          </h3>
+          </Link>
           <small className="text-lg mb-2 block">
             {job.empresa} | {job.ubicacion}
           </small>
