@@ -10,7 +10,7 @@ import { IconJava } from "../icons/IconJava.jsx";
 import { IconPython } from "../icons/IconPython.jsx";
 import { CardAvatar } from "../components/CardAvatar.jsx";
 // import "../components/home.mo"
-export function Home() {
+export default function Home() {
   const { navigateTo } = useRouter();
   const searchId = useId();
   const handleSubmit = (event) => {

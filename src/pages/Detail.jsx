@@ -32,13 +32,13 @@ function SpecialSection({ title, content, ...props }) {
     <section {...props}>
       <h3 className="text-2xl font-semibold mb-6">{title}</h3>
       <div
-        className={`prose prose-li:text-slate-50/80 prose-li:list-none  ${styles.li} `}
+        className={`prose prose-li:text-slate-50/80 prose-li:list-none   ${styles.li} `}
         dangerouslySetInnerHTML={{ __html: html }}
       ></div>
     </section>
   );
 }
-export function Detail() {
+export default function Detail() {
   const [job, setJob] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -88,6 +88,7 @@ export function Detail() {
                 <span>·{capitalize(job.data.modalidad)}</span>
               </p>
             </div>
+            {/* Hacer el botton dinamico con disabled y texto adaptable a la sesion */}
             <ButtonPrimary size="md">Aplicar ahora</ButtonPrimary>
           </header>
           <main>

@@ -1,7 +1,7 @@
 import { ButtonPrimary } from "../components/ButtonPrimary.jsx";
 import { Link } from "../components/Link.jsx";
 import { IconNotFoundPage } from "./../icons/IconNotFoundPage.jsx";
-export function NotFoundPage() {
+export default function NotFoundPage() {
   return (
     <div className="flex justify-center items-center flex-col mt-20">
       <div className="mb-10 ">

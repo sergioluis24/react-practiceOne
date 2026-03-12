@@ -1,6 +1,6 @@
 import { useFormContact } from "../hooks/useFormContact";
 import { Toaster, toast } from "sonner";
-export function Contact() {
+export default function Contact() {
   const {
     isValidName,
     isValidEmail,

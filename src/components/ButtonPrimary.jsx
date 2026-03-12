@@ -13,10 +13,10 @@ export function ButtonPrimary({
     props.size = "w-30 py-2";
   }
   if (props.size === "md") {
-    props.size = "w-40 py-4";
+    props.size = "w-40 py-2";
   }
   if (props.size === "lg") {
-    props.size = "w-50 py-6";
+    props.size = "w-50 py-4";
   }
   return (
     <>

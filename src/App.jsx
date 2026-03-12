@@ -1,14 +1,17 @@
 // import { useState } from 'react'
 import "./index.css";
+import { lazy, Suspense } from "react";
 import { Background } from "./components/background.jsx";
 import { Header } from "./components/Header.jsx";
 import { Footer } from "./components/Footer.jsx";
-import { Home } from "./pages/Home.jsx";
-import { SearchPage } from "./pages/SearchPage.jsx";
-import { Contact } from "./pages/Contact.jsx";
+
+const Home = lazy(() => import("./pages/Home.jsx"));
+const SearchPage = lazy(() => import("./pages/SearchPage.jsx"));
+const Contact = lazy(() => import("./pages/Contact.jsx"));
+const Detail = lazy(() => import("./pages/Detail.jsx"));
+const NotFoundPage = lazy(() => import("./pages/NotFoundPage.jsx"));
+
 import { ButtonBack } from "./components/ButtonBack.jsx";
-import { NotFoundPage } from "./pages/NotFoundPage.jsx";
-import { Detail } from "./pages/Detail.jsx";
 import { Modal } from "flowbite-react";
 import { Routes, Route } from "react-router";
 
@@ -17,17 +20,19 @@ function App() {
     <>
       <Background>
         <Header />
-        <div className="shrink grow">
-          <div className="md:max-w-230 md:mx-auto ">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/search" element={<SearchPage />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/detail/:id" element={<Detail />} />
-              <Route path="*" element={<NotFoundPage />} />
-            </Routes>
+        <Suspense fallback={<p>Cargando pagina...</p>}>
+          <div className="shrink grow">
+            <div className="md:max-w-230 md:mx-auto ">
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/search" element={<SearchPage />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/detail/:id" element={<Detail />} />
+                <Route path="*" element={<NotFoundPage />} />
+              </Routes>
+            </div>
           </div>
-        </div>
+        </Suspense>
 
         <Footer />
         <ButtonBack />

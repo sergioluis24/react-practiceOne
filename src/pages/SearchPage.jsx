@@ -8,7 +8,7 @@ import { useFilters } from "../hooks/useFilters.jsx";
 import { useGetJobs } from "../hooks/useGetJobs.jsx";
 import { ModalError } from "../components/ModalError.jsx";
 
-export function SearchPage() {
+export default function SearchPage() {
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [total, setTotal] = useState(null);

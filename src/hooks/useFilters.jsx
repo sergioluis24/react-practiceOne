@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useFilterStorage } from "./useFilterStorage";
 import { useSearchParams } from "react-router";
-import { useRouter } from "./useRouter";
 export function useFilters(setError, currentPage) {
   const [searchParams, setSearchParams] = useSearchParams();
   const { getLocalStorageFilters, getLocalStorageTextToFilter } =
