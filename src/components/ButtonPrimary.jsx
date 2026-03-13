@@ -22,7 +22,9 @@ export function ButtonPrimary({
     <>
       <button
         {...props}
-        className={`${bg}   ${color} ${props.size} ${textSize} h-fit inline-block  rounded-xl shadow-lg ${shadow}   px-4   font-bold cursor-pointer hover:scale-110 transition`}
+        className={`${bg}   ${color} ${props.size} ${textSize} disabled:bg-gray-700 disabled:shadow-none
+        disabled:pointer-none disabled:pointer-events-none disabled:opacity-50
+        h-fit inline-block  rounded-xl shadow-lg ${shadow}   px-4   font-bold cursor-pointer hover:scale-110 transition`}
       >
         {children}
       </button>

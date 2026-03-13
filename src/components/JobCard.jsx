@@ -1,5 +1,34 @@
 import { ButtonPrimary } from "./ButtonPrimary";
 import { Link } from "./Link.jsx";
+import { useAuthStore } from "./../store/authStore.js";
+import { useFavStore } from "./../store/favStore.js";
+
+function ActionsButtons({ jobId }) {
+  const { toggleFavorite, isFavorite } = useFavStore();
+  const { isLogged } = useAuthStore();
+  return (
+    <div className="flex flex-col gap-4">
+      <Link href={`/detail/${jobId}`}>
+        <ButtonPrimary size="sm" bg="bg-gray-700" shadow="shadow-gray-700/80">
+          Ver detalles
+        </ButtonPrimary>
+      </Link>
+      <ButtonPrimary disabled={!isLogged} size="sm">
+        Aplicar
+      </ButtonPrimary>
+
+      <ButtonPrimary
+        disabled={!isLogged}
+        onClick={() => toggleFavorite(jobId)}
+        size="sm"
+      >
+        {" "}
+        {isFavorite(jobId) ? "❤️" : "🤍"}
+      </ButtonPrimary>
+    </div>
+  );
+}
+
 export function JobCard({ job, isLast }) {
   return (
     <>
@@ -20,18 +49,7 @@ export function JobCard({ job, isLast }) {
           </small>
           <p className="w-10/12">{job.descripcion}</p>
         </div>
-        <div className="flex flex-col gap-4">
-          <Link href={`/detail/${job.id}`}>
-            <ButtonPrimary
-              size="sm"
-              bg="bg-gray-700"
-              shadow="shadow-gray-700/80"
-            >
-              Ver detalles
-            </ButtonPrimary>
-          </Link>
-          <ButtonPrimary size="sm">Aplicar</ButtonPrimary>
-        </div>
+        <ActionsButtons jobId={job.id}></ActionsButtons>
       </article>
     </>
   );

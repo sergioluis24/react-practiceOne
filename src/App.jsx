@@ -4,12 +4,13 @@ import { lazy, Suspense } from "react";
 import { Background } from "./components/background.jsx";
 import { Header } from "./components/Header.jsx";
 import { Footer } from "./components/Footer.jsx";
-
+import { ProtectedRute } from "./components/ProtectedRute.jsx";
 const Home = lazy(() => import("./pages/Home.jsx"));
 const SearchPage = lazy(() => import("./pages/SearchPage.jsx"));
 const Contact = lazy(() => import("./pages/Contact.jsx"));
 const Detail = lazy(() => import("./pages/Detail.jsx"));
 const NotFoundPage = lazy(() => import("./pages/NotFoundPage.jsx"));
+const ProfilePage = lazy(() => import("./pages/ProfilePage.jsx"));
 
 import { ButtonBack } from "./components/ButtonBack.jsx";
 import { Modal } from "flowbite-react";
@@ -28,6 +29,14 @@ function App() {
                 <Route path="/search" element={<SearchPage />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/detail/:id" element={<Detail />} />
+                <Route
+                  path="/profile"
+                  element={
+                    <ProtectedRute>
+                      <ProfilePage />
+                    </ProtectedRute>
+                  }
+                />
                 <Route path="*" element={<NotFoundPage />} />
               </Routes>
             </div>

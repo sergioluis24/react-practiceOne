@@ -6,6 +6,8 @@ import { ButtonPrimary } from "../components/ButtonPrimary.jsx";
 import snarkdown from "snarkdown";
 import { Link } from "../components/Link.jsx";
 import styles from "./Detail.module.css";
+import { useAuthStore } from "./../store/authStore.js";
+import { useFavStore } from "./../store/favStore.js";
 
 function JobNotFound() {
   return (
@@ -38,11 +40,32 @@ function SpecialSection({ title, content, ...props }) {
     </section>
   );
 }
+function DetailButtons({ jobId }) {
+  const { toggleFavorite, isFavorite } = useFavStore();
+  const { isLogged } = useAuthStore();
+
+  return (
+    <article className="flex gap-4">
+      <ButtonPrimary disabled={!isLogged} size="md">
+        {isLogged ? "Aplicar ahora" : "Inicia sesion para aplicar"}
+      </ButtonPrimary>
+      <ButtonPrimary
+        disabled={!isLogged}
+        onClick={() => toggleFavorite(jobId)}
+        size="sm"
+      >
+        {isFavorite(jobId) ? "❤️" : "🤍"}
+      </ButtonPrimary>
+    </article>
+  );
+}
+
 export default function Detail() {
   const [job, setJob] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const { id } = useParams();
+  const { isLogged } = useAuthStore();
   useEffect(() => {
     fetch(`https://jscamp-api.vercel.app/api/jobs/${id}`)
       .then((response) => {
@@ -88,8 +111,8 @@ export default function Detail() {
                 <span>·{capitalize(job.data.modalidad)}</span>
               </p>
             </div>
+            <DetailButtons jobId={job.id}></DetailButtons>
             {/* Hacer el botton dinamico con disabled y texto adaptable a la sesion */}
-            <ButtonPrimary size="md">Aplicar ahora</ButtonPrimary>
           </header>
           <main>
             <section className="mb-8">

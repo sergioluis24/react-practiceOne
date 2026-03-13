@@ -2,9 +2,13 @@ import logo from "./../assets/SmallSquareLogoJpg.jpg";
 import { Link } from "./Link";
 import { NavLink } from "react-router";
 import { ButtonPrimary } from "./ButtonPrimary";
-import { useAuth } from "../context/authContext.jsx";
+import { useAuthStore } from "./../store/authStore.js";
+import { useFavStore } from "./../store/favStore.js";
+
 export function Header() {
-  const { isLogged, logIn, logOut } = useAuth();
+  const { isLogged, logIn, logOut } = useAuthStore();
+  const { numFavorites } = useFavStore();
+
   return (
     <>
       <header className="navbar w-full py-8 mb-8">
@@ -19,6 +23,9 @@ export function Header() {
             </Link>
           </div>
           <div className="flex gap-6 items-center">
+            {isLogged && (
+              <NavLink to="/profile">Profile ❤️({numFavorites()})</NavLink>
+            )}
             <NavLink
               to="/search"
               className={({ isActive }) =>
@@ -40,12 +47,12 @@ export function Header() {
               Contacto
             </NavLink>
             <ButtonPrimary
-              bg={`${isLogged ? "bg-blue-400/70" : "bg-red-400/70"}`}
-              shadow={`${isLogged ? "shadow-blue-400/70" : "shadow-red-400/70"}`}
+              bg={`${!isLogged ? "bg-blue-400/70" : "bg-red-400/70"}`}
+              shadow={`${!isLogged ? "shadow-blue-400/70" : "shadow-red-400/70"}`}
               size="md"
               onClick={isLogged ? logOut : logIn}
             >
-              {isLogged ? "Iniciar sesion" : "Cerrar sesion"}
+              {!isLogged ? "Iniciar sesion" : "Cerrar sesion"}
             </ButtonPrimary>
           </div>
         </nav>
