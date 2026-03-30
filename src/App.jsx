@@ -11,6 +11,7 @@ const Contact = lazy(() => import("./pages/Contact.jsx"));
 const Detail = lazy(() => import("./pages/Detail.jsx"));
 const NotFoundPage = lazy(() => import("./pages/NotFoundPage.jsx"));
 const ProfilePage = lazy(() => import("./pages/ProfilePage.jsx"));
+const Login = lazy(() => import("./pages/Login.jsx"));
 
 import { ButtonBack } from "./components/ButtonBack.jsx";
 import { Modal } from "flowbite-react";
@@ -28,6 +29,7 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/search" element={<SearchPage />} />
                 <Route path="/contact" element={<Contact />} />
+                <Route path="/login" element={<Login />} />
                 <Route path="/detail/:id" element={<Detail />} />
                 <Route
                   path="/profile"
