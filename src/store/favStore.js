@@ -1,8 +1,12 @@
 import { create } from "zustand";
 
-export const useFavStore = create((set, get) => ({
+export const useFavStore = create((set, get, store) => ({
   // state
   favorites: [],
+
+  resetFav: () => {
+    set(store.getInitialState());
+  },
 
   addFavorite: (jobId) => {
     set((state) => ({
